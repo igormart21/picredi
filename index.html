@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picredi - Sistema de Cores</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background);
+            color: var(--foreground);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: var(--primary-foreground);
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.9;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .color-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 60px;
+            border-radius: var(--radius);
+            margin-bottom: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .color-value {
+            font-size: 0.9em;
+            color: var(--muted-foreground);
+            font-family: monospace;
+        }
+
+        .demo-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            color: var(--foreground);
+        }
+
+        .button {
+            background: var(--primary);
+            color: var(--primary-foreground);
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 500;
+            margin: 5px;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        .button-secondary {
+            background: var(--secondary);
+            color: var(--secondary-foreground);
+        }
+
+        .button-destructive {
+            background: var(--destructive);
+            color: white;
+        }
+
+        .input {
+            background: var(--background);
+            border: 1px solid var(--input);
+            border-radius: var(--radius);
+            padding: 10px;
+            color: var(--foreground);
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .input:focus {
+            outline: 2px solid var(--ring);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Modo Escuro</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Picredi - Sistema de Cores</h1>
+            <p>Demonstração das variáveis CSS com suporte a tema claro e escuro</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>🎯 Componentes de Exemplo</h2>
+            <button class="button">Botão Primário</button>
+            <button class="button button-secondary">Botão Secundário</button>
+            <button class="button button-destructive">Botão Destrutivo</button>
+            
+            <br><br>
+            
+            <input type="text" class="input" placeholder="Campo de entrada" value="Texto de exemplo">
+            <input type="email" class="input" placeholder="Email" value="usuario@exemplo.com">
+        </div>
+
+        <div class="demo-section">
+            <h2>📊 Paleta de Cores</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--background);"></div>
+                    <div class="color-name">Background</div>
+                    <div class="color-value">var(--background)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--foreground);"></div>
+                    <div class="color-name">Foreground</div>
+                    <div class="color-value">var(--foreground)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--primary);"></div>
+                    <div class="color-name">Primary</div>
+                    <div class="color-value">var(--primary)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--secondary);"></div>
+                    <div class="color-name">Secondary</div>
+                    <div class="color-value">var(--secondary)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--muted);"></div>
+                    <div class="color-name">Muted</div>
+                    <div class="color-value">var(--muted)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--accent);"></div>
+                    <div class="color-name">Accent</div>
+                    <div class="color-value">var(--accent)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--destructive);"></div>
+                    <div class="color-name">Destructive</div>
+                    <div class="color-value">var(--destructive)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--border);"></div>
+                    <div class="color-name">Border</div>
+                    <div class="color-value">var(--border)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>📈 Cores dos Gráficos</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--chart-1);"></div>
+                    <div class="color-name">Chart 1</div>
+                    <div class="color-value">var(--chart-1)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--chart-2);"></div>
+                    <div class="color-name">Chart 2</div>
+                    <div class="color-value">var(--chart-2)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--chart-3);"></div>
+                    <div class="color-name">Chart 3</div>
+                    <div class="color-value">var(--chart-3)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--chart-4);"></div>
+                    <div class="color-name">Chart 4</div>
+                    <div class="color-value">var(--chart-4)</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--chart-5);"></div>
+                    <div class="color-name">Chart 5</div>
+                    <div class="color-value">var(--chart-5)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.theme-toggle');
+            
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                button.textContent = '🌙 Modo Escuro';
+            } else {
+                body.classList.add('dark');
+                button.textContent = '☀️ Modo Claro';
+            }
+        }
+
+        // Salvar preferência do tema
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            document.querySelector('.theme-toggle').textContent = '☀️ Modo Claro';
+        }
+
+        // Atualizar o botão quando o tema muda
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const isDark = document.body.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>
