@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { 
   PiggyBank, 
@@ -189,7 +190,31 @@ const requirements = [
   }
 ];
 
+// Função para calcular a parcela usando juros compostos
+function calculateInstallment(principal: number, monthlyRate: number, months: number): number {
+  if (monthlyRate === 0) return principal / months;
+  const rate = monthlyRate / 100;
+  return principal * (rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+}
+
 export default function EmprestimosPage() {
+  const [loanAmount, setLoanAmount] = useState(10000);
+  const [loanTerm, setLoanTerm] = useState(12);
+  const monthlyRate = 1.99; // Taxa mensal fixa de 1.99%
+
+  const installmentAmount = useMemo(() => {
+    return calculateInstallment(loanAmount, monthlyRate, loanTerm);
+  }, [loanAmount, loanTerm]);
+
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -287,7 +312,9 @@ export default function EmprestimosPage() {
                             type="range" 
                             min="1000" 
                             max="50000" 
-                            defaultValue="10000"
+                            value={loanAmount}
+                            onChange={(e) => setLoanAmount(Number(e.target.value))}
+                            step="1000"
                             className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer"
                           />
                           <div className="flex justify-between text-xs text-muted-foreground mt-1">
@@ -304,7 +331,9 @@ export default function EmprestimosPage() {
                             type="range" 
                             min="6" 
                             max="24" 
-                            defaultValue="12"
+                            value={loanTerm}
+                            onChange={(e) => setLoanTerm(Number(e.target.value))}
+                            step="1"
                             className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer"
                           />
                           <div className="flex justify-between text-xs text-muted-foreground mt-1">
@@ -319,19 +348,19 @@ export default function EmprestimosPage() {
                       <div className="space-y-2">
                         <div className="flex justify-between">
                           <span className="text-sm font-medium text-muted-foreground">Valor Solicitado:</span>
-                          <span className="font-semibold text-foreground">R$ 10.000</span>
+                          <span className="font-semibold text-foreground">{formatCurrency(loanAmount)}</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-sm font-medium text-muted-foreground">Parcelas:</span>
-                          <span className="font-semibold text-foreground">12x</span>
+                          <span className="font-semibold text-foreground">{loanTerm}x</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-sm font-medium text-muted-foreground">Valor da Parcela:</span>
-                          <span className="font-semibold text-accent">R$ 1.047</span>
+                          <span className="font-semibold text-accent">{formatCurrency(installmentAmount)}</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-sm font-medium text-muted-foreground">Taxa Mensal:</span>
-                          <span className="font-semibold text-green-500">1.99%</span>
+                          <span className="font-semibold text-green-500">{monthlyRate.toFixed(2)}%</span>
                         </div>
                       </div>
                     </div>
@@ -680,3 +709,4 @@ export default function EmprestimosPage() {
     </div>
   );
 }
+

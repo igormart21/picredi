@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, CreditCard, TrendingUp, PiggyBank, Building, Shield } from 'lucide-react';
+import { Smartphone, CreditCard, TrendingUp, PiggyBank, Building, Shield, Sprout, Landmark, LineChart } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
@@ -57,6 +57,27 @@ const businessProducts = [
     description: 'Proteja o que mais importa',
     features: ['Seguro de vida', 'Seguro residencial', 'Seguro auto'],
     price: 'A partir de R$ 29/mês',
+  },
+  {
+    icon: Sprout,
+    title: 'Agronegócio',
+    description: 'Crédito e soluções financeiras para o campo',
+    features: ['Crédito Rural', 'Financiamento de máquinas', 'Safra e custeio'],
+    price: 'Linhas subsidiadas',
+  },
+  {
+    icon: Landmark,
+    title: 'Imobiliário',
+    description: 'Financiamento e consórcio para imóveis',
+    features: ['Crédito habitacional', 'Consórcio', 'Portabilidade'],
+    price: 'Taxas a partir de 9.9% a.a.',
+  },
+  {
+    icon: LineChart,
+    title: 'Fundos de Investimento',
+    description: 'Portfólios profissionais com gestão especializada',
+    features: ['Renda fixa', 'Multimercado', 'Ações e índices'],
+    price: 'Aplicação inicial acessível',
   },
 ];
 

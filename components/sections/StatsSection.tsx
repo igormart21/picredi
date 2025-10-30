@@ -8,30 +8,30 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 const stats = [
   {
     icon: Users,
-    value: '500K+',
-    label: 'Clientes Ativos',
-    description: 'Crescimento de 150% ao ano',
+    value: '632',
+    label: 'Parceiros',
+    description: '',
     color: 'text-accent',
   },
   {
     icon: TrendingUp,
-    value: 'R$ 2.5B',
-    label: 'Volume Transacionado',
-    description: 'Aumento de 200% em 2024',
+    value: 'R$ 65 bi',
+    label: 'Em transações bancárias por mês',
+    description: '',
     color: 'text-secondary',
   },
   {
     icon: Shield,
-    value: '99.9%',
-    label: 'Uptime Garantido',
-    description: 'Disponibilidade 24/7',
+    value: '2 mi',
+    label: 'Operações de crédito por mês',
+    description: '',
     color: 'text-green-500',
   },
   {
     icon: Award,
-    value: '4.9/5',
-    label: 'Satisfação',
-    description: 'Baseado em 50K+ avaliações',
+    value: 'R$ 1.5 bi',
+    label: 'Operações de crédito por mês',
+    description: '',
     color: 'text-yellow-500',
   },
 ];
@@ -142,22 +142,24 @@ export function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card variant="luxury" className="h-full group hover:scale-105 transition-transform duration-300">
+              <Card variant="luxury" className="h-full group hover:scale-105 transition-transform duration-300 flex flex-col">
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
                       <feature.icon className="w-6 h-6 text-accent" />
                     </div>
-                    <span className="px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-xs font-medium">
-                      {feature.highlight}
-                    </span>
                   </div>
                   <CardTitle className="text-xl">{feature.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex flex-col justify-between">
                   <CardDescription className="text-base">
                     {feature.description}
                   </CardDescription>
+                  <div className="mt-6 flex justify-center">
+                    <span className="px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-xs font-medium whitespace-nowrap">
+                      {feature.highlight}
+                    </span>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -167,3 +169,4 @@ export function FeaturesSection() {
     </section>
   );
 }
+

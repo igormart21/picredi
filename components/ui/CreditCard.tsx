@@ -37,9 +37,9 @@ export function CreditCardComponent({
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img 
-                src="/assets/logo-picredi-white.png" 
+                src="/assets/logo-picredi.png" 
                 alt="Picredi Logo" 
-                className="h-6 w-auto"
+                className="h-5 w-auto object-contain"
               />
               <div className="text-xs font-medium opacity-90">DIGITAL</div>
             </div>

@@ -6,24 +6,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 const values = [
   {
-    icon: Shield,
-    title: 'Segurança em Primeiro Lugar',
-    description: 'Implementamos as mais rigorosas medidas de segurança para proteger seus dados e transações.',
+    icon: Award,
+    title: 'Excelência e Expertise',
+    description: 'Equipe experiente e dedicada, com gestão rigorosa e eficiente de ativos.',
   },
   {
     icon: Users,
-    title: 'Cliente no Centro',
-    description: 'Cada decisão que tomamos é pensada para melhorar sua experiência bancária.',
+    title: 'Transparência e Confiança',
+    description: 'Relações de longo prazo baseadas em comunicação clara e acessível.',
   },
   {
-    icon: Award,
-    title: 'Excelência Operacional',
-    description: 'Buscamos constantemente a excelência em todos os nossos processos e serviços.',
+    icon: Shield,
+    title: 'Gestão de Riscos',
+    description: 'Processos estruturados para proteger o patrimônio e a segurança dos investimentos.',
   },
   {
     icon: TrendingUp,
-    title: 'Inovação Contínua',
-    description: 'Estamos sempre à frente, desenvolvendo soluções que transformam o mercado financeiro.',
+    title: 'Portfólio Diversificado',
+    description: 'Soluções em renda fixa e variável para diferentes perfis e objetivos.',
   },
 ];
 
@@ -58,32 +58,82 @@ const timeline = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-background via-background to-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground mb-6">
-              Sobre a{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
-                Picredi
-              </span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Somos mais que um banco digital. Somos a ponte entre o presente e o futuro 
-              das finanças, onde tecnologia, segurança e inovação se encontram para 
-              transformar sua vida financeira.
-            </p>
-          </motion.div>
+      {/* Quem Somos - efeito somente nesta seção: imagem sticky atrás, conteúdo cobre ao rolar */}
+      <section className="relative -mt-16">
+        {/* BG sticky visível apenas dentro desta seção */}
+        <div className="sticky top-0 h-[60vh] sm:h-[70vh] lg:h-[75vh] -z-10">
+          <img
+            src="/assets/imagnes/enhanced_emir-img-6-min.png"
+            alt="Picredi - Quem Somos"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30" />
+        </div>
+        {/* Conteúdo que sobrepõe a imagem enquanto rola apenas aqui */}
+        <div className="relative py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground mb-6">
+                Quem <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Somos</span>
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                Somos a <span className="font-semibold text-foreground">Picredi Administração Ativos</span>,
+                uma gestora de recursos dedicada a oferecer soluções de investimento eficientes e personalizadas.
+                Nossa missão é valorizar o capital de nossos clientes com solidez, transparência e responsabilidade.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-20">
+      
+
+      {/* Vision & Commitment (solid background to cover the image) */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card variant="glass">
+                <CardHeader>
+                  <CardTitle className="text-2xl">Nossa Visão</CardTitle>
+                  <CardDescription className="text-base">
+                    Ser referência em gestão de ativos, reconhecida pela excelência,
+                    inovação e impacto positivo para clientes e comunidades.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <Card variant="glass">
+                <CardHeader>
+                  <CardTitle className="text-2xl">Nosso Compromisso</CardTitle>
+                  <CardDescription className="text-base">
+                    Parceria de longo prazo, gestão responsável e comunicação transparente
+                    para construir um futuro financeiro sólido e próspero.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section (solid background) */}
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -95,13 +145,12 @@ export default function AboutPage() {
                 Nossa Missão
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Democratizar o acesso a serviços financeiros de alta qualidade, 
-                utilizando tecnologia de ponta para criar uma experiência bancária 
-                verdadeiramente personalizada e segura.
+                Oferecer soluções de gestão de ativos sólidas e alinhadas aos objetivos
+                de cada investidor, garantindo segurança, rentabilidade e transparência.
               </p>
               <p className="text-lg text-muted-foreground">
-                Acreditamos que todos merecem ter controle total sobre suas finanças, 
-                com transparência, simplicidade e inovação em cada interação.
+                Atuamos com responsabilidade e foco no crescimento sustentável, gerando
+                valor para clientes e parceiros no longo prazo.
               </p>
             </motion.div>
             
@@ -178,8 +227,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20">
+      {/* Timeline Section (solid background) */}
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -235,6 +284,53 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Differentials */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
+              Nosso Diferencial
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Gestão profissional e especializada com foco no resultado e no longo prazo.
+              Solidez institucional, processos robustos e visão de desenvolvimento sustentável.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card variant="luxury">
+              <CardHeader>
+                <CardTitle className="text-xl">Gestão Profissional</CardTitle>
+                <CardDescription className="text-base">
+                  Processos consistentes, avaliação de risco contínua e disciplina de execução.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card variant="luxury">
+              <CardHeader>
+                <CardTitle className="text-xl">Solidez e Transparência</CardTitle>
+                <CardDescription className="text-base">
+                  Relatórios claros, governança e comunicação acessível ao investidor.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card variant="luxury">
+              <CardHeader>
+                <CardTitle className="text-xl">Impacto Positivo</CardTitle>
+                <CardDescription className="text-base">
+                  Soluções que buscam resultados e benefícios duradouros para clientes e comunidades.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-accent/10 to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -255,12 +351,6 @@ export default function AboutPage() {
                 className="inline-flex items-center justify-center px-8 py-3 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors"
               >
                 Abrir Conta
-              </a>
-              <a
-                href="/carreiras"
-                className="inline-flex items-center justify-center px-8 py-3 border border-border bg-transparent text-foreground rounded-lg font-medium hover:bg-muted transition-colors"
-              >
-                Trabalhe Conosco
               </a>
             </div>
           </motion.div>

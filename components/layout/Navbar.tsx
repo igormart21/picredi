@@ -16,7 +16,7 @@ interface NavItem {
 
 const navigation: NavItem[] = [
   { label: 'Início', href: '/' },
-  { label: 'Sobre', href: '/sobre' },
+  { label: 'Quem Somos', href: '/sobre' },
   {
     label: 'Produtos',
     href: '/produtos',
@@ -25,12 +25,12 @@ const navigation: NavItem[] = [
       { label: 'Cartão de Crédito', href: '/produtos/cartao-credito' },
       { label: 'Investimentos', href: '/produtos/investimentos' },
       { label: 'Empréstimos', href: '/produtos/emprestimos' },
+      { label: 'Agronegócio', href: '/produtos/agronegocio' },
+      { label: 'Imobiliário', href: '/produtos/imobiliario' },
+      { label: 'Fundos de Investimento', href: '/produtos/fundos-investimento' },
     ],
   },
-  { label: 'Soluções Corporativas', href: '/solucoes-corporativas' },
-  { label: 'Tecnologia & Segurança', href: '/tecnologia-seguranca' },
-  { label: 'Carreiras', href: '/carreiras' },
-  { label: 'Blog', href: '/blog' },
+  
   { label: 'Contato', href: '/contato' },
 ];
 
@@ -89,13 +89,13 @@ export default function Navbar() {
               <img 
                 src="/assets/logo-picredi.png" 
                 alt="Picredi Logo" 
-                className="h-6 w-auto"
+                className="h-8 w-auto"
               />
             </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 ml-8">
             {navigation.map((item) => (
               <div
                 key={item.label}
@@ -106,13 +106,13 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    'flex items-center space-x-1 px-3 py-2 text-sm font-medium transition-colors hover:text-accent',
+                    'flex items-center space-x-1 px-3 py-2 text-sm font-medium transition-colors hover:text-accent whitespace-nowrap',
                     pathname === item.href
                       ? 'text-accent'
                       : 'text-foreground'
                   )}
                 >
-                  <span>{item.label}</span>
+                  <span className="whitespace-nowrap">{item.label}</span>
                   {item.children && <ChevronDown className="w-4 h-4" />}
                 </Link>
 
@@ -146,14 +146,14 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-2">
             <Link href="/login">
-              <Button variant="ghost" size="sm" className="rounded-full border border-border/50 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 px-6 py-2">
-                Área do Cliente
+              <Button variant="ghost" size="sm" className="rounded-full border border-border/50 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 px-6 py-2 whitespace-nowrap">
+                Acessar Conta
               </Button>
             </Link>
             <Link href="/contato">
-              <Button variant="accent" size="sm" className="rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 px-6 py-2">
+              <Button variant="accent" size="sm" className="rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 px-6 py-2 whitespace-nowrap">
                 Abrir Conta
               </Button>
             </Link>
@@ -186,7 +186,7 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      'block px-3 py-2 text-base font-medium transition-colors',
+                      'block px-3 py-2 text-base font-medium transition-colors whitespace-nowrap',
                       pathname === item.href
                         ? 'text-accent'
                         : 'text-foreground hover:text-accent'
@@ -214,12 +214,12 @@ export default function Navbar() {
               
               <div className="pt-6 border-t border-border space-y-4">
                 <Link href="/login" onClick={closeMobileMenu}>
-                  <Button variant="ghost" className="w-full justify-center rounded-full border border-border/50 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 px-8 py-4 text-base">
-                    Área do Cliente
+                  <Button variant="ghost" className="w-full justify-center rounded-full border border-border/50 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 px-8 py-4 text-base whitespace-nowrap">
+                    Acessar Conta
                   </Button>
                 </Link>
                 <Link href="/contato" onClick={closeMobileMenu}>
-                  <Button variant="accent" className="w-full rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 px-8 py-4 text-base">
+                  <Button variant="accent" className="w-full rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 px-8 py-4 text-base whitespace-nowrap">
                     Abrir Conta
                   </Button>
                 </Link>

@@ -172,126 +172,137 @@ const performanceData = [
 export default function InvestimentosPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-background via-background to-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <motion.div
-              className="space-y-8"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center">
-                    <TrendingUp className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground">
-                      Investimentos{' '}
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
-                        Profissionais
-                      </span>
-                    </h1>
-                    <p className="text-lg text-muted-foreground mt-2">
-                      Gestão especializada
-                    </p>
-                  </div>
-                </div>
-                
-                <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                  Invista com gestão profissional e análise especializada. 
-                  Carteiras otimizadas, taxa zero e acompanhamento dedicado.
-                </p>
-              </div>
-
-              {/* CTA Buttons */}
+      {/* Hero com imagem sticky ao fundo (efeito igual às outras páginas) */}
+      <section className="relative -mt-16">
+        {/* camada de imagem sticky visível apenas nesta seção */}
+        <div className="sticky top-0 h-[60vh] sm:h-[70vh] lg:h-[75vh] -z-10 bg-background flex items-center justify-center">
+          <img
+            src="/assets/imagnes/enhanced_touro1-jpg.png"
+            alt="Picredi Investimentos"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30" />
+        </div>
+        <div className="relative py-16 sm:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Content */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                className="space-y-8"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
               >
-                <Button size="lg" variant="accent" className="group">
-                  Começar a Investir
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline">
-                  Simular Investimento
-                </Button>
-              </motion.div>
-
-              {/* Trust Indicators */}
-              <motion.div
-                className="flex items-center space-x-8 pt-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">R$ 10</div>
-                  <div className="text-sm text-muted-foreground">Aplicação Mínima</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">R$ 0</div>
-                  <div className="text-sm text-muted-foreground">Taxa de Admin</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">18%</div>
-                  <div className="text-sm text-muted-foreground">Rendimento Médio</div>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Performance Chart */}
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <Card variant="luxury" className="p-8">
-                <CardHeader>
-                  <CardTitle className="text-xl mb-2">Performance dos Últimos 6 Meses</CardTitle>
-                  <CardDescription>Rendimento médio mensal da carteira Picredi</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {performanceData.map((data, index) => (
-                      <motion.div
-                        key={data.month}
-                        className="flex items-center justify-between"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                      >
-                        <span className="text-sm font-medium text-muted-foreground">{data.month}</span>
-                        <div className="flex items-center space-x-3">
-                          <div className="w-32 h-2 bg-muted rounded-full overflow-hidden">
-                            <motion.div
-                              className="h-full bg-gradient-to-r from-green-500 to-green-600 rounded-full"
-                              initial={{ width: '0%' }}
-                              animate={{ width: `${(data.return / 3) * 100}%` }}
-                              transition={{ duration: 1, delay: index * 0.1 }}
-                            />
-                          </div>
-                          <span className="text-sm font-bold text-green-500">+{data.return}%</span>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-green-500/10 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-foreground">Rendimento Total</span>
-                      <span className="text-lg font-bold text-green-500">+13.3%</span>
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center">
+                      <TrendingUp className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground">
+                        Investimentos{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
+                          Profissionais
+                        </span>
+                      </h1>
+                      <p className="text-lg text-muted-foreground mt-2">
+                        Gestão especializada
+                      </p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+                  
+                  <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                    Invista com gestão profissional e análise especializada. 
+                    Carteiras otimizadas, taxa zero e acompanhamento dedicado.
+                  </p>
+                </div>
+
+                {/* CTA Buttons */}
+                <motion.div
+                  className="flex flex-col sm:flex-row gap-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  <Button size="lg" variant="accent" className="group">
+                    Começar a Investir
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                  <Button size="lg" variant="outline">
+                    Simular Investimento
+                  </Button>
+                </motion.div>
+
+                {/* Trust Indicators */}
+                <motion.div
+                  className="flex items-center space-x-8 pt-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-foreground">R$ 10</div>
+                    <div className="text-sm text-muted-foreground">Aplicação Mínima</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-foreground">R$ 0</div>
+                    <div className="text-sm text-muted-foreground">Taxa de Admin</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-foreground">18%</div>
+                    <div className="text-sm text-muted-foreground">Rendimento Médio</div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Performance Chart */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <Card variant="luxury" className="p-8">
+                  <CardHeader>
+                    <CardTitle className="text-xl mb-2">Performance dos Últimos 6 Meses</CardTitle>
+                    <CardDescription>Rendimento médio mensal da carteira Picredi</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {performanceData.map((data, index) => (
+                        <motion.div
+                          key={data.month}
+                          className="flex items-center justify-between"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                        >
+                          <span className="text-sm font-medium text-muted-foreground">{data.month}</span>
+                          <div className="flex items-center space-x-3">
+                            <div className="w-32 h-2 bg-muted rounded-full overflow-hidden">
+                              <motion.div
+                                className="h-full bg-gradient-to-r from-green-500 to-green-600 rounded-full"
+                                initial={{ width: '0%' }}
+                                animate={{ width: `${(data.return / 3) * 100}%` }}
+                                transition={{ duration: 1, delay: index * 0.1 }}
+                              />
+                            </div>
+                            <span className="text-sm font-bold text-green-500">+{data.return}%</span>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                    
+                    <div className="mt-6 p-4 bg-green-500/10 rounded-lg">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-foreground">Rendimento Total</span>
+                        <span className="text-lg font-bold text-green-500">+13.3%</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>

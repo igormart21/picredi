@@ -92,11 +92,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/GoodTimesRg-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        <link rel="icon" href="/assets/logo-picredi-white.png" />
+        <link rel="icon" type="image/png" href="/assets/logo-picredi-white.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo-picredi-white.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo-picredi-white.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo-picredi-white.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

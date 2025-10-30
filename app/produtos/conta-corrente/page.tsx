@@ -133,58 +133,64 @@ const steps = [
 export default function ContaCorrentePage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-background via-background to-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
-                <Smartphone className="w-10 h-10 text-white" />
+      {/* Hero com imagem sticky ao fundo (efeito igual ao Quem Somos) */}
+      <section className="relative -mt-16">
+        {/* camada de imagem sticky visível apenas nesta seção */}
+        <div className="sticky top-0 h-[45vh] sm:h-[55vh] lg:h-[60vh] -z-10 bg-background flex items-center justify-center">
+          <img
+            src="/assets/imagnes/image-115.png"
+            alt="Picredi App Preview"
+            className="w-full h-full object-contain"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/15 to-black/10" />
+        </div>
+        <div className="relative py-16 sm:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
+                  <Smartphone className="w-10 h-10 text-white" />
+                </div>
               </div>
-            </div>
-            
-            <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground mb-6">
-              Conta Corrente{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
-                Digital
-              </span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Gerencie seu dinheiro com total liberdade e segurança. 
-              Uma conta completa, sem taxas e com todos os serviços que você precisa.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" variant="accent" className="group">
-                Abrir Conta Agora
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Baixar App
-              </Button>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="flex items-center justify-center space-x-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">500K+</div>
-                <div className="text-sm text-muted-foreground">Clientes Ativos</div>
+              <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground mb-6">
+                Conta Corrente{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Digital</span>
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                Gerencie seu dinheiro com total liberdade e segurança. 
+                Uma conta completa, sem taxas e com todos os serviços que você precisa.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <Button size="lg" variant="accent" className="group">
+                  Abrir Conta Agora
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button size="lg" variant="outline">
+                  Baixar App
+                </Button>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">R$ 0</div>
-                <div className="text-sm text-muted-foreground">Taxa de Manutenção</div>
+              {/* Trust Indicators */}
+              <div className="flex items-center justify-center space-x-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-foreground">500K+</div>
+                  <div className="text-sm text-muted-foreground">Clientes Ativos</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-foreground">R$ 0</div>
+                  <div className="text-sm text-muted-foreground">Taxa de Manutenção</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-foreground">24/7</div>
+                  <div className="text-sm text-muted-foreground">Disponível</div>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">24/7</div>
-                <div className="text-sm text-muted-foreground">Disponível</div>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -216,19 +222,23 @@ export default function ContaCorrentePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card variant="luxury" className="h-full text-center hover:scale-105 transition-transform duration-300">
+                <Card variant="luxury" className="h-full text-center hover:scale-105 transition-transform duration-300 flex flex-col">
                   <CardHeader>
                     <div className="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <feature.icon className="w-8 h-8 text-accent" />
                     </div>
                     <CardTitle className="text-xl mb-2">{feature.title}</CardTitle>
-                    <CardDescription className="text-base mb-4">
+                    <CardDescription className="text-base">
                       {feature.description}
                     </CardDescription>
-                    <div className="px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-sm font-medium inline-block">
-                      {feature.highlight}
-                    </div>
                   </CardHeader>
+                  <CardContent className="mt-auto">
+                    <div className="mt-6 flex justify-center">
+                      <span className="px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-sm font-medium inline-block whitespace-nowrap">
+                        {feature.highlight}
+                      </span>
+                    </div>
+                  </CardContent>
                 </Card>
               </motion.div>
             ))}
@@ -424,3 +434,4 @@ export default function ContaCorrentePage() {
     </div>
   );
 }
+
