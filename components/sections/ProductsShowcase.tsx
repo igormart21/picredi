@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Smartphone, CreditCard, TrendingUp, PiggyBank, Building, Shield, Sprout, Landmark, LineChart } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -15,6 +16,7 @@ const products = [
     price: 'Gratuito',
     popular: true,
     gradient: 'from-blue-500 to-blue-600',
+    href: '/produtos/conta-corrente',
   },
   {
     icon: CreditCard,
@@ -24,6 +26,7 @@ const products = [
     price: 'Sem anuidade',
     popular: false,
     gradient: 'from-purple-500 to-purple-600',
+    href: '/produtos/cartao-credito',
   },
   {
     icon: TrendingUp,
@@ -33,6 +36,7 @@ const products = [
     price: 'A partir de R$ 10',
     popular: false,
     gradient: 'from-green-500 to-green-600',
+    href: '/produtos/investimentos',
   },
 ];
 
@@ -43,6 +47,7 @@ const businessProducts = [
     description: 'Soluções completas para sua empresa',
     features: ['Gestão de fluxo de caixa', 'Relatórios gerenciais', 'Cartão corporativo'],
     price: 'Sob consulta',
+    href: '/contato',
   },
   {
     icon: PiggyBank,
@@ -50,6 +55,7 @@ const businessProducts = [
     description: 'Dinheiro rápido com as melhores taxas',
     features: ['Aprovação em minutos', 'Taxas competitivas', 'Sem burocracia'],
     price: 'A partir de 1.99% a.m.',
+    href: '/produtos/emprestimos',
   },
   {
     icon: Shield,
@@ -57,6 +63,7 @@ const businessProducts = [
     description: 'Proteja o que mais importa',
     features: ['Seguro de vida', 'Seguro residencial', 'Seguro auto'],
     price: 'A partir de R$ 29/mês',
+    href: '/contato',
   },
   {
     icon: Sprout,
@@ -64,6 +71,7 @@ const businessProducts = [
     description: 'Crédito e soluções financeiras para o campo',
     features: ['Crédito Rural', 'Financiamento de máquinas', 'Safra e custeio'],
     price: 'Linhas subsidiadas',
+    href: '/produtos/agronegocio',
   },
   {
     icon: Landmark,
@@ -71,6 +79,7 @@ const businessProducts = [
     description: 'Financiamento e consórcio para imóveis',
     features: ['Crédito habitacional', 'Consórcio', 'Portabilidade'],
     price: 'Taxas a partir de 9.9% a.a.',
+    href: '/produtos/imobiliario',
   },
   {
     icon: LineChart,
@@ -78,10 +87,13 @@ const businessProducts = [
     description: 'Portfólios profissionais com gestão especializada',
     features: ['Renda fixa', 'Multimercado', 'Ações e índices'],
     price: 'Aplicação inicial acessível',
+    href: '/produtos/fundos-investimento',
   },
 ];
 
 export function ProductsShowcase() {
+  const router = useRouter();
+
   return (
     <section className="py-20 bg-gradient-to-br from-background to-muted/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,10 +175,18 @@ export function ProductsShowcase() {
                     </div>
                     
                     <div className="flex flex-col space-y-3 mt-auto">
-                      <Button variant="accent" className="w-full">
+                      <Button 
+                        variant="accent" 
+                        className="w-full"
+                        onClick={() => router.push(product.href)}
+                      >
                         Saiba Mais
                       </Button>
-                      <Button variant="outline" className="w-full">
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                        onClick={() => router.push('/contato')}
+                      >
                         Contratar
                       </Button>
                     </div>
@@ -226,10 +246,18 @@ export function ProductsShowcase() {
                     </div>
                     
                     <div className="flex flex-col space-y-3 mt-auto">
-                      <Button variant="secondary" className="w-full">
+                      <Button 
+                        variant="secondary" 
+                        className="w-full"
+                        onClick={() => router.push(product.href)}
+                      >
                         Saiba Mais
                       </Button>
-                      <Button variant="outline" className="w-full">
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                        onClick={() => router.push('/contato')}
+                      >
                         Falar com Especialista
                       </Button>
                     </div>

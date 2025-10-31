@@ -125,7 +125,7 @@ export default function Hero() {
                 <div className="text-sm text-muted-foreground">Clientes Ativos</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">R$ 2.5B</div>
+                <div className="text-2xl font-bold text-foreground">R$ 65 bi</div>
                 <div className="text-sm text-muted-foreground">Volume Transacionado</div>
               </div>
               <div className="text-center">

@@ -1,8 +1,11 @@
 import Hero from '@/components/sections/Hero';
 import { StatsSection, FeaturesSection } from '@/components/sections/StatsSection';
 import { ProductsShowcase } from '@/components/sections/ProductsShowcase';
+import { DigitalExperience } from '@/components/sections/DigitalExperience';
+import { CompleteSolutions } from '@/components/sections/CompleteSolutions';
 import { TechSecuritySection } from '@/components/sections/TechSecuritySection';
 import { PartnersSection } from '@/components/sections/PartnersSection';
+import { CoreBanking } from '@/components/sections/CoreBanking';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -22,7 +25,10 @@ export default function HomePage() {
       <StatsSection />
       <FeaturesSection />
       <ProductsShowcase />
+      <DigitalExperience />
+      <CompleteSolutions />
       <PartnersSection />
+      <CoreBanking />
       <TechSecuritySection />
     </>
   );

@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { 
   Smartphone, 
@@ -18,7 +19,6 @@ import {
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
 
 const features = [
   {
@@ -131,6 +131,8 @@ const steps = [
 ];
 
 export default function ContaCorrentePage() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen">
       {/* Hero com imagem sticky ao fundo (efeito igual ao Quem Somos) */}
@@ -166,7 +168,12 @@ export default function ContaCorrentePage() {
                 Uma conta completa, sem taxas e com todos os serviços que você precisa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <Button size="lg" variant="accent" className="group">
+                <Button 
+                  size="lg" 
+                  variant="accent" 
+                  className="group"
+                  onClick={() => router.push('/contato')}
+                >
                   Abrir Conta Agora
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -420,7 +427,12 @@ export default function ContaCorrentePage() {
               com condições exclusivas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="accent" className="group">
+              <Button 
+                size="lg" 
+                variant="accent" 
+                className="group"
+                onClick={() => router.push('/contato')}
+              >
                 Abrir Conta Agora
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>

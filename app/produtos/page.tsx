@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { CreditCard, PiggyBank, TrendingUp, Shield, Smartphone, Building } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -18,6 +19,7 @@ const products = [
     ],
     category: 'personal',
     popular: true,
+    href: '/produtos/conta-corrente',
   },
   {
     icon: CreditCard,
@@ -30,6 +32,7 @@ const products = [
       'Atendimento prioritário',
     ],
     category: 'personal',
+    href: '/produtos/cartao-credito',
   },
   {
     icon: TrendingUp,
@@ -42,6 +45,7 @@ const products = [
       'Relatórios personalizados',
     ],
     category: 'personal',
+    href: '/produtos/investimentos',
   },
   {
     icon: PiggyBank,
@@ -54,6 +58,7 @@ const products = [
       'Parcelamento flexível',
     ],
     category: 'personal',
+    href: '/produtos/emprestimos',
   },
   {
     icon: Building,
@@ -66,6 +71,7 @@ const products = [
       'Relatórios gerenciais',
     ],
     category: 'business',
+    href: '/contato',
   },
   {
     icon: Shield,
@@ -78,6 +84,7 @@ const products = [
       'Seguro viagem',
     ],
     category: 'personal',
+    href: '/contato',
   },
 ];
 
@@ -88,6 +95,8 @@ const categories = [
 ];
 
 export default function ProductsPage() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -184,10 +193,18 @@ export default function ProductsPage() {
                     </ul>
                     
                     <div className="flex flex-col space-y-3">
-                      <Button variant="accent" className="w-full">
+                      <Button 
+                        variant="accent" 
+                        className="w-full"
+                        onClick={() => router.push(product.href)}
+                      >
                         Saiba Mais
                       </Button>
-                      <Button variant="outline" className="w-full">
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                        onClick={() => router.push('/contato')}
+                      >
                         Contratar
                       </Button>
                     </div>
@@ -282,12 +299,13 @@ export default function ProductsPage() {
               Abra sua conta em minutos e tenha acesso a todos os nossos produtos 
               com condições exclusivas.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="accent">
+            <div className="flex justify-center">
+              <Button 
+                size="lg" 
+                variant="accent"
+                onClick={() => router.push('/contato')}
+              >
                 Abrir Conta Agora
-              </Button>
-              <Button size="lg" variant="outline">
-                Falar com Especialista
               </Button>
             </div>
           </motion.div>

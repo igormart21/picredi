@@ -70,7 +70,6 @@ export function CreditCardComponent({
               <div className="w-6 h-4 bg-white rounded-sm flex items-center justify-center">
                 <div className="w-4 h-2 bg-red-500 rounded-sm" />
               </div>
-              <div className="text-xs font-medium opacity-60">VISA</div>
             </div>
           </div>
         </div>

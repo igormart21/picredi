@@ -8,22 +8,22 @@ const values = [
   {
     icon: Award,
     title: 'Excelência e Expertise',
-    description: 'Equipe experiente e dedicada, com gestão rigorosa e eficiente de ativos.',
+    description: 'Contamos com uma equipe de profissionais experientes e dedicados, focados em uma gestão de ativos rigorosa e eficiente.',
   },
   {
     icon: Users,
     title: 'Transparência e Confiança',
-    description: 'Relações de longo prazo baseadas em comunicação clara e acessível.',
+    description: 'Acreditamos que a confiança é a base de qualquer relacionamento duradouro. Por isso, nossa comunicação é clara, transparente e acessível.',
   },
   {
     icon: Shield,
     title: 'Gestão de Riscos',
-    description: 'Processos estruturados para proteger o patrimônio e a segurança dos investimentos.',
+    description: 'A gestão de riscos é um pilar fundamental da nossa atuação. Nossos processos são desenhados para proteger o patrimônio e garantir a segurança dos investimentos.',
   },
   {
     icon: TrendingUp,
     title: 'Portfólio Diversificado',
-    description: 'Soluções em renda fixa e variável para diferentes perfis e objetivos.',
+    description: 'Oferecemos uma gama completa de soluções de investimento, desde a renda fixa até a renda variável, para atender aos diferentes perfis e objetivos dos investidores.',
   },
 ];
 
@@ -81,10 +81,17 @@ export default function AboutPage() {
               <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground mb-6">
                 Quem <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Somos</span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Somos a <span className="font-semibold text-foreground">Picredi Administração Ativos</span>,
+              <p className="text-xl text-foreground mb-6 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-lg">
+                Somos a <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Picredi Administração Ativos</span>,
                 uma gestora de recursos dedicada a oferecer soluções de investimento eficientes e personalizadas.
-                Nossa missão é valorizar o capital de nossos clientes com solidez, transparência e responsabilidade.
+                Nossa missão é valorizar o capital de nossos clientes, por meio de uma gestão de ativos sólida e transparente,
+                buscando os melhores resultados com responsabilidade.
+              </p>
+              <p className="text-lg text-foreground max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                A <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Picredi Administração Ativos</span> é a entidade responsável pela gestão de fundos e recursos financeiros
+                para o Sicredi, uma das maiores instituições financeiras cooperativas do Brasil. Atuamos com base em
+                princípios cooperativos, focados em soluções financeiras que geram desenvolvimento local e beneficiam
+                nossos associados e a sociedade.
               </p>
             </motion.div>
           </div>
@@ -101,13 +108,15 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="h-full"
             >
-              <Card variant="glass">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Nossa Visão</CardTitle>
-                  <CardDescription className="text-base">
-                    Ser referência em gestão de ativos, reconhecida pela excelência,
-                    inovação e impacto positivo para clientes e comunidades.
+              <Card variant="glass" className="h-full flex flex-col">
+                <CardHeader className="flex-1 flex flex-col">
+                  <CardTitle className="text-2xl mb-4">Nossa Visão</CardTitle>
+                  <CardDescription className="text-base flex-1">
+                    Ser uma gestora de ativos referência no mercado, reconhecida pela excelência em gestão,
+                    inovação e pelo impacto positivo gerado para nossos associados e para o desenvolvimento
+                    sustentável das comunidades.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -117,13 +126,17 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
+              className="h-full"
             >
-              <Card variant="glass">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Nosso Compromisso</CardTitle>
-                  <CardDescription className="text-base">
-                    Parceria de longo prazo, gestão responsável e comunicação transparente
-                    para construir um futuro financeiro sólido e próspero.
+              <Card variant="glass" className="h-full flex flex-col">
+                <CardHeader className="flex-1 flex flex-col">
+                  <CardTitle className="text-2xl mb-4">Nosso Compromisso</CardTitle>
+                  <CardDescription className="text-base flex-1">
+                    Com um foco no crescimento sustentável, estamos comprometidos em gerar valor para nossos
+                    clientes e parceiros. Nossa atuação busca alinhar os melhores resultados financeiros com
+                    as necessidades e expectativas de cada investidor. A Picredi Administração Ativos é mais do
+                    que uma gestora; somos parceiros de nossos clientes na construção de um futuro financeiro
+                    sólido e próspero.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -145,12 +158,13 @@ export default function AboutPage() {
                 Nossa Missão
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Oferecer soluções de gestão de ativos sólidas e alinhadas aos objetivos
-                de cada investidor, garantindo segurança, rentabilidade e transparência.
+                Oferecer soluções de gestão de ativos alinhadas com os valores do cooperativismo, garantindo
+                segurança, rentabilidade e transparência para nossos associados. Buscamos construir um futuro
+                financeiro mais próspero e equilibrado, respeitando as pessoas e as comunidades onde atuamos.
               </p>
               <p className="text-lg text-muted-foreground">
-                Atuamos com responsabilidade e foco no crescimento sustentável, gerando
-                valor para clientes e parceiros no longo prazo.
+                Valorizamos o capital de nossos clientes por meio de uma gestão de ativos sólida e transparente,
+                sempre buscando os melhores resultados com responsabilidade.
               </p>
             </motion.div>
             
@@ -168,7 +182,7 @@ export default function AboutPage() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-foreground">R$ 2.5B</div>
+                      <div className="text-2xl font-bold text-foreground">R$ 65 bi</div>
                       <div className="text-sm text-muted-foreground">Volume Transacionado</div>
                     </div>
                     <div className="text-center">
@@ -196,7 +210,7 @@ export default function AboutPage() {
               Nossos Valores
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Os princípios que guiam cada decisão e cada inovação que desenvolvemos.
+              Os princípios que fundamentam nossa atuação e guiam cada decisão e cada relacionamento.
             </p>
           </motion.div>
 
@@ -296,38 +310,92 @@ export default function AboutPage() {
             <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
               Nosso Diferencial
             </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+              Com a Picredi Administração Ativos, você tem acesso a uma gestão profissional e especializada,
+              com a solidez e a confiança de uma instituição financeira cooperativa com mais de um século de história.
+            </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Gestão profissional e especializada com foco no resultado e no longo prazo.
-              Solidez institucional, processos robustos e visão de desenvolvimento sustentável.
+              Nossa atuação sistêmica e nosso foco no desenvolvimento local nos permitem oferecer soluções de investimento
+              que, além de rentáveis, geram um impacto positivo e duradouro. Venha fazer parte do nosso modelo de gestão
+              e descubra uma nova forma de investir no seu futuro, com a força do cooperativismo.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <Card variant="luxury">
               <CardHeader>
-                <CardTitle className="text-xl">Gestão Profissional</CardTitle>
+                <CardTitle className="text-xl">Gestão Profissional e Especializada</CardTitle>
                 <CardDescription className="text-base">
-                  Processos consistentes, avaliação de risco contínua e disciplina de execução.
+                  Equipe experiente com processos consistentes, avaliação de risco contínua e disciplina de execução.
                 </CardDescription>
               </CardHeader>
             </Card>
             <Card variant="luxury">
               <CardHeader>
-                <CardTitle className="text-xl">Solidez e Transparência</CardTitle>
+                <CardTitle className="text-xl">Solidez e Confiança</CardTitle>
                 <CardDescription className="text-base">
-                  Relatórios claros, governança e comunicação acessível ao investidor.
+                  Instituição financeira cooperativa com mais de um século de história. Relatórios claros,
+                  governança e comunicação acessível.
                 </CardDescription>
               </CardHeader>
             </Card>
             <Card variant="luxury">
               <CardHeader>
-                <CardTitle className="text-xl">Impacto Positivo</CardTitle>
+                <CardTitle className="text-xl">Desenvolvimento Local</CardTitle>
                 <CardDescription className="text-base">
-                  Soluções que buscam resultados e benefícios duradouros para clientes e comunidades.
+                  Atuação sistêmica focada em soluções que geram impacto positivo e duradouro para
+                  associados e comunidades.
                 </CardDescription>
               </CardHeader>
             </Card>
           </div>
+
+          {/* Valores Cooperativistas */}
+          <motion.div
+            className="mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
+              Valores do Cooperativismo
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card variant="glass">
+                <CardHeader>
+                  <CardTitle className="text-lg">Cooperação</CardTitle>
+                  <CardDescription className="text-sm">
+                    Acreditamos que a união de esforços fortalece o capital e gera resultados mais sólidos e justos.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card variant="glass">
+                <CardHeader>
+                  <CardTitle className="text-lg">Pessoas no Centro</CardTitle>
+                  <CardDescription className="text-sm">
+                    Nossos associados são o nosso maior ativo, e todas as nossas decisões são tomadas com o objetivo de beneficiá-los.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card variant="glass">
+                <CardHeader>
+                  <CardTitle className="text-lg">Ética e Transparência</CardTitle>
+                  <CardDescription className="text-sm">
+                    Atuamos com base em princípios claros e honestos, mantendo uma comunicação aberta e transparente.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card variant="glass">
+                <CardHeader>
+                  <CardTitle className="text-lg">Desenvolvimento Local</CardTitle>
+                  <CardDescription className="text-sm">
+                    Apoiamos o crescimento das comunidades onde estamos inseridos, pois acreditamos que o sucesso de nossos
+                    associados impulsiona o desenvolvimento de toda a região.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -340,10 +408,11 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
-              Faça Parte da Revolução
+              Venha Fazer Parte
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Junte-se a milhares de clientes que já descobriram o futuro do banking digital.
+              Venha fazer parte do nosso modelo de gestão e descubra uma nova forma de investir no seu futuro,
+              com a força do cooperativismo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
