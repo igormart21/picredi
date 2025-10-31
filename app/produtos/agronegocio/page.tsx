@@ -8,29 +8,41 @@ import { Button } from '@/components/ui/Button';
 export default function AgronegocioPage() {
   return (
     <div className="min-h-screen">
-      <section className="relative py-20 bg-gradient-to-br from-background via-background to-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground mb-6">
-              Soluções para o <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Agronegócio</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Crédito e serviços financeiros sob medida para impulsionar a produção, a safra e o crescimento do campo.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Button variant="accent">Falar com Especialista</Button>
-              <Button variant="outline">Simular Crédito</Button>
-            </div>
-          </motion.div>
+      {/* Hero com imagem sticky ao fundo (efeito igual às outras páginas) */}
+      <section className="relative -mt-16">
+        {/* camada de imagem sticky visível apenas nesta seção */}
+        <div className="sticky top-0 h-[60vh] sm:h-[70vh] lg:h-[75vh] -z-10 bg-background flex items-center justify-center">
+          <img
+            src="/assets/imagnes/enhanced_IMAGEM-2023-11-13T162613-122.png"
+            alt="Picredi Agronegócio"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30" />
+        </div>
+        <div className="relative py-16 sm:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground mb-6">
+                Soluções para o <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Agronegócio</span>
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                Crédito e serviços financeiros sob medida para impulsionar a produção, a safra e o crescimento do campo.
+              </p>
+              <div className="flex gap-4 justify-center">
+                <Button variant="accent">Falar com Especialista</Button>
+                <Button variant="outline">Simular Crédito</Button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-3xl sm:text-4xl font-good-times text-foreground mb-10 text-center"
