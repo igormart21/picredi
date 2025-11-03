@@ -369,28 +369,28 @@ export default function AboutPage() {
           </motion.div>
 
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-accent to-secondary rounded-full" />
+            {/* Timeline Line - Hidden on mobile, visible on desktop */}
+            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-accent to-secondary rounded-full" />
             
-            <div className="space-y-12">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-12">
               {timeline.map((item, index) => (
                 <motion.div
                   key={item.year}
-                  className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  className={`flex items-center flex-col lg:flex-row ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                 >
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
-                    <Card variant="luxury">
-                      <CardHeader>
-                        <div className="flex items-center space-x-4">
-                          <div className="w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-full flex items-center justify-center">
-                            <span className="text-primary font-bold text-lg">{item.year}</span>
+                  <div className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-8 lg:text-right' : 'lg:pl-8'} text-left`}>
+                    <Card variant="luxury" className="shadow-md">
+                      <CardHeader className="p-3 sm:p-4 lg:p-6">
+                        <div className="flex items-start space-x-3 sm:space-x-4">
+                          <div className="w-9 h-9 sm:w-11 sm:h-11 lg:w-16 lg:h-16 bg-gradient-to-br from-accent to-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span className="text-primary font-bold text-[10px] sm:text-xs lg:text-lg">{item.year}</span>
                           </div>
-                          <div>
-                            <CardTitle className="text-xl">{item.title}</CardTitle>
-                            <CardDescription className="text-base">
+                          <div className="flex-1 min-w-0 pt-0.5">
+                            <CardTitle className="text-xs sm:text-sm lg:text-xl mb-1 font-semibold leading-tight">{item.title}</CardTitle>
+                            <CardDescription className="text-[11px] sm:text-xs lg:text-base leading-relaxed mt-1">
                               {item.description}
                             </CardDescription>
                           </div>
@@ -399,8 +399,8 @@ export default function AboutPage() {
                     </Card>
                   </div>
                   
-                  {/* Timeline Dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background shadow-lg" />
+                  {/* Timeline Dot - Hidden on mobile, visible on desktop */}
+                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background shadow-lg" />
                 </motion.div>
               ))}
             </div>
