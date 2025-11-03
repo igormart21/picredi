@@ -59,26 +59,26 @@ const features = [
 
 export function StatsSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-muted/20 to-background">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-muted/20 to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-good-times text-foreground mb-4 sm:mb-6">
             Números que{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
               Impressionam
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
             Nossos resultados falam por si só. Crescimento constante e satisfação dos clientes.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -88,18 +88,18 @@ export function StatsSection() {
             >
               <Card variant="glass" className="text-center h-full">
                 <CardHeader>
-                  <div className={`w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                    <stat.icon className={`w-8 h-8 ${stat.color}`} />
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4`}>
+                    <stat.icon className={`w-6 h-6 sm:w-8 sm:h-8 ${stat.color}`} />
                   </div>
-                  <CardTitle className="text-3xl font-bold text-foreground mb-2">
+                  <CardTitle className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
                     {stat.value}
                   </CardTitle>
-                  <CardDescription className="text-lg font-semibold text-foreground">
+                  <CardDescription className="text-sm sm:text-base lg:text-lg font-semibold text-foreground">
                     {stat.label}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     {stat.description}
                   </p>
                 </CardContent>
@@ -114,27 +114,27 @@ export function StatsSection() {
 
 export function FeaturesSection() {
   return (
-    <section className="py-20">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-good-times text-foreground mb-4 sm:mb-6">
             Por que{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
               Escolher
             </span>{' '}
             a Picredi?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
             Tecnologia de ponta, segurança incomparável e atendimento personalizado.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}

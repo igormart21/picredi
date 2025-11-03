@@ -95,29 +95,29 @@ export function ProductsShowcase() {
   const router = useRouter();
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-muted/10">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-background to-muted/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-good-times text-foreground mb-4 sm:mb-6">
             Nossos{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
               Produtos
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
             Uma linha completa de soluções financeiras para todas as suas necessidades.
           </p>
         </motion.div>
 
         {/* Personal Products */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <motion.h3
-            className="text-2xl font-semibold text-foreground mb-8 text-center"
+            className="text-xl sm:text-2xl font-semibold text-foreground mb-6 sm:mb-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -125,7 +125,7 @@ export function ProductsShowcase() {
             Produtos Pessoais
           </motion.h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {products.map((product, index) => (
               <motion.div
                 key={product.title}
@@ -158,9 +158,9 @@ export function ProductsShowcase() {
                     </div>
                   </CardHeader>
                   
-                  <CardContent className="flex-1 flex flex-col justify-between">
-                    <div className="space-y-4 mb-6">
-                      <ul className="space-y-3">
+                  <CardContent className="flex-1 flex flex-col">
+                    <div className="mb-6 flex-1 flex flex-col">
+                      <ul className="space-y-3 flex-1">
                         {product.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center space-x-3">
                             <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
@@ -169,8 +169,8 @@ export function ProductsShowcase() {
                         ))}
                       </ul>
                       
-                      <div className="text-center py-3 bg-muted/30 rounded-lg">
-                        <span className="text-xl font-bold text-foreground">{product.price}</span>
+                      <div className="text-center px-2 bg-muted/30 rounded-lg h-[4rem] sm:h-[5rem] flex items-end justify-center pb-2 sm:pb-3 mt-4 flex-shrink-0">
+                        <span className="text-sm sm:text-base font-bold text-foreground leading-[1.5] break-words block">{product.price}</span>
                       </div>
                     </div>
                     
@@ -200,7 +200,7 @@ export function ProductsShowcase() {
         {/* Business Products */}
         <div>
           <motion.h3
-            className="text-2xl font-semibold text-foreground mb-8 text-center"
+            className="text-xl sm:text-2xl font-semibold text-foreground mb-6 sm:mb-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -208,7 +208,7 @@ export function ProductsShowcase() {
             Soluções Empresariais
           </motion.h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {businessProducts.map((product, index) => (
               <motion.div
                 key={product.title}
@@ -229,9 +229,9 @@ export function ProductsShowcase() {
                     </div>
                   </CardHeader>
                   
-                  <CardContent className="flex-1 flex flex-col justify-between">
-                    <div className="space-y-4 mb-6">
-                      <ul className="space-y-3">
+                  <CardContent className="flex-1 flex flex-col">
+                    <div className="mb-6 flex-1 flex flex-col">
+                      <ul className="space-y-3 flex-1">
                         {product.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center space-x-3">
                             <div className="w-2 h-2 bg-secondary rounded-full flex-shrink-0" />
@@ -240,8 +240,8 @@ export function ProductsShowcase() {
                         ))}
                       </ul>
                       
-                      <div className="text-center py-3 bg-muted/30 rounded-lg">
-                        <span className="text-xl font-bold text-foreground">{product.price}</span>
+                      <div className="text-center px-2 bg-muted/30 rounded-lg h-[4rem] sm:h-[5rem] flex items-end justify-center pb-2 sm:pb-3 mt-4 flex-shrink-0">
+                        <span className="text-sm sm:text-base font-bold text-foreground leading-[1.5] break-words block">{product.price}</span>
                       </div>
                     </div>
                     

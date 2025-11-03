@@ -9,7 +9,7 @@ export default function AgronegocioPage() {
   return (
     <div className="min-h-screen">
       {/* Hero com imagem sticky ao fundo (efeito igual às outras páginas) */}
-      <section className="relative -mt-16">
+      <section className="relative">
         {/* camada de imagem sticky visível apenas nesta seção */}
         <div className="sticky top-0 h-[60vh] sm:h-[70vh] lg:h-[75vh] -z-10 bg-background flex items-center justify-center">
           <img

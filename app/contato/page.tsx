@@ -21,8 +21,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Endereço',
-    description: 'São Paulo, SP',
-    details: 'Av. Paulista, 1000 - Bela Vista',
+    description: 'Av. Pres. Juscelino Kubitschek, 1455 - 4º Andar',
+    details: 'Vila Nova Conceição, São Paulo - SP, 04543-011',
   },
   {
     icon: Clock,

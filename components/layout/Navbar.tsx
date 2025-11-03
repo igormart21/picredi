@@ -71,7 +71,7 @@ export default function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-luxury'
+          ? 'bg-card backdrop-blur-md shadow-luxury border-b border-border/20'
           : 'bg-transparent'
       )}
       initial={{ y: -100 }}
@@ -89,7 +89,7 @@ export default function Navbar() {
               <img 
                 src="/assets/logo-picredi.png" 
                 alt="Picredi Logo" 
-                className="h-8 w-auto"
+                className="h-5 w-auto"
               />
             </motion.div>
           </Link>

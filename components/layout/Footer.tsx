@@ -215,8 +215,8 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               <MapPin className="w-5 h-5 text-accent" />
               <div>
-                <p className="text-sm font-medium text-foreground">São Paulo, SP</p>
-                <p className="text-xs text-muted-foreground">Sede principal</p>
+                <p className="text-sm font-medium text-foreground">Av. Pres. Juscelino Kubitschek, 1455 - 4º Andar</p>
+                <p className="text-xs text-muted-foreground">Vila Nova Conceição, São Paulo - SP, 04543-011</p>
               </div>
             </div>
           </div>

@@ -27,7 +27,7 @@ export function CreditCardComponent({
 
   return (
     <motion.div
-      className={`relative w-80 h-48 ${className}`}
+      className={`relative w-full max-w-[320px] h-[192px] sm:w-80 sm:h-48 ${className}`}
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     >
@@ -86,7 +86,7 @@ export function CreditCardStack() {
   ];
 
   return (
-    <div className="relative w-80 h-48">
+    <div className="relative w-full max-w-[320px] h-[192px] sm:w-80 sm:h-48 mx-auto">
       {cards.map((card, index) => (
         <motion.div
           key={index}

@@ -136,7 +136,7 @@ export default function ContaCorrentePage() {
   return (
     <div className="min-h-screen">
       {/* Hero com imagem sticky ao fundo (efeito igual ao Quem Somos) */}
-      <section className="relative -mt-16">
+      <section className="relative">
         {/* camada de imagem sticky visível apenas nesta seção */}
         <div className="sticky top-0 h-[45vh] sm:h-[55vh] lg:h-[60vh] -z-10 bg-background flex items-center justify-center">
           <img
