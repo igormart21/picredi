@@ -135,18 +135,16 @@ export default function ContaCorrentePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero com imagem sticky ao fundo (efeito igual ao Quem Somos) */}
-      <section className="relative">
-        {/* camada de imagem sticky visível apenas nesta seção */}
-        <div className="sticky top-0 h-[45vh] sm:h-[55vh] lg:h-[60vh] -z-10 bg-background flex items-center justify-center">
+      {/* Hero: imagem no topo e conteúdo abaixo (sem sticky/overlay) */}
+      <section>
+        <div className="w-full h-[45vh] sm:h-[55vh] lg:h-[60vh]">
           <img
             src="/assets/imagnes/image-115.png"
             alt="Picredi App Preview"
             className="w-full h-full object-contain"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/15 to-black/10" />
         </div>
-        <div className="relative py-16 sm:py-20">
+        <div className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center max-w-4xl mx-auto"

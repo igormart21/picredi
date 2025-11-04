@@ -41,7 +41,6 @@ export function CreditCardComponent({
                 alt="Picredi Logo" 
                 className="h-5 w-auto object-contain"
               />
-              <div className="text-xs font-medium opacity-90">DIGITAL</div>
             </div>
           </div>
 

@@ -8,18 +8,16 @@ import { Button } from '@/components/ui/Button';
 export default function ImobiliarioPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero com imagem sticky ao fundo (efeito igual às outras páginas) */}
-      <section className="relative">
-        {/* camada de imagem sticky visível apenas nesta seção */}
-        <div className="sticky top-0 h-[60vh] sm:h-[70vh] lg:h-[75vh] -z-10 bg-background flex items-center justify-center">
+      {/* Hero: imagem no topo e conteúdo abaixo (sem sticky/overlay) */}
+      <section>
+        <div className="w-full h-[60vh] sm:h-[70vh] lg:h-[75vh]">
           <img
             src="/assets/imagnes/enhanced_real-estate-finance-mortgage-interest-260nw-2636368449-jpg copy.png"
             alt="Picredi Crédito Imobiliário"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30" />
         </div>
-        <div className="relative py-16 sm:py-20">
+        <div className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="text-center max-w-4xl mx-auto" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground mb-6">
@@ -28,10 +26,7 @@ export default function ImobiliarioPage() {
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
                 Financiamento, consórcio e portabilidade com condições competitivas e atendimento consultivo.
               </p>
-              <div className="flex gap-4 justify-center">
-                <Button variant="accent">Simular Financiamento</Button>
-                <Button variant="outline">Falar com Especialista</Button>
-              </div>
+              
             </motion.div>
           </div>
         </div>
@@ -85,6 +80,16 @@ export default function ImobiliarioPage() {
                 </Card>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA final da página */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="accent">Simular Financiamento</Button>
+            <Button size="lg" variant="outline">Falar com Especialista</Button>
           </div>
         </div>
       </section>

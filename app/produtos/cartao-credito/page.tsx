@@ -104,7 +104,7 @@ const features = [
   },
   {
     icon: CheckCircle,
-    title: 'Cartão Digital',
+    title: 'Cartão',
     description: 'Use no celular antes do físico chegar',
   },
   {
@@ -151,7 +151,7 @@ const steps = [
   {
     step: '04',
     title: 'Cartão Ativo',
-    description: 'Use o cartão digital imediatamente',
+    description: 'Use o cartão imediatamente',
     icon: CreditCard,
   },
 ];

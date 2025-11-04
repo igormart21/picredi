@@ -22,10 +22,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <DigitalExperience />
       <StatsSection />
       <FeaturesSection />
       <ProductsShowcase />
-      <DigitalExperience />
       <CompleteSolutions />
       <PartnersSection />
       <CoreBanking />

@@ -58,44 +58,39 @@ const timeline = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      {/* Quem Somos - efeito somente nesta seção: imagem sticky atrás, conteúdo cobre ao rolar */}
-      <section className="relative">
-        {/* BG sticky visível apenas dentro desta seção */}
-        <div className="sticky top-0 h-[60vh] sm:h-[70vh] lg:h-[75vh] -z-10">
+      {/* Quem Somos - imagem no topo e conteúdo abaixo (sem overlay/sticky) */}
+      <section>
+        <div className="w-full h-[60vh] sm:h-[70vh] lg:h-[75vh]">
           <img
             src="/assets/imagnes/enhanced_emir-img-6-min.png"
             alt="Picredi - Quem Somos"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30" />
         </div>
-        {/* Conteúdo que sobrepõe a imagem enquanto rola apenas aqui */}
-        <div className="relative py-12 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-              <h1 className="text-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-good-times text-foreground mb-6 sm:mb-8 drop-shadow-2xl px-4">
+        <div className="py-12 sm:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-good-times text-foreground mb-6 sm:mb-8 px-4">
                 Quem <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-secondary to-accent animate-gradient bg-[length:200%_auto]">Somos</span>
-            </h1>
-              <p className="text-base sm:text-lg text-foreground mb-6 sm:mb-8 max-w-3xl mx-auto font-bold leading-relaxed drop-shadow-xl px-4">
+              </h1>
+              <p className="text-base sm:text-lg text-foreground mb-6 sm:mb-8 max-w-3xl mx-auto font-bold leading-relaxed px-4">
                 Somos a <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary font-extrabold">Picredi Administração Ativos</span>,
                 uma gestora de recursos dedicada a oferecer soluções de investimento eficientes e personalizadas.
               </p>
-              <p className="text-base sm:text-lg text-foreground mb-6 sm:mb-8 max-w-3xl mx-auto font-semibold leading-relaxed drop-shadow-lg px-4">
+              <p className="text-base sm:text-lg text-foreground mb-6 sm:mb-8 max-w-3xl mx-auto font-semibold leading-relaxed px-4">
                 Nossa missão é valorizar o capital de nossos clientes, por meio de uma gestão de ativos sólida e transparente,
                 buscando os melhores resultados com responsabilidade.
               </p>
-              <p className="text-sm sm:text-base lg:text-lg text-foreground/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md font-medium px-4">
-                A <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Picredi Administração Ativos</span> é a entidade responsável pela gestão de fundos e recursos financeiros
-                para o Sicredi, uma das maiores instituições financeiras cooperativas do Brasil. Atuamos com base em
-                princípios cooperativos, focados em soluções financeiras que geram desenvolvimento local e beneficiam
-                nossos associados e a sociedade.
-            </p>
-          </motion.div>
+              <p className="text-sm sm:text-base lg:text-lg text-foreground/90 max-w-3xl mx-auto leading-relaxed font-medium px-4">
+                Atuamos com base em princípios cooperativos, focados em soluções financeiras que geram desenvolvimento local
+                e beneficiam nossos associados e a sociedade.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -280,14 +275,10 @@ export default function AboutPage() {
                   </p>
                 </div>
                 
-                <div className="space-y-4 pt-6 border-t border-border/50">
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Relação com o Sicredi
-                  </h3>
+                <div className="space-y-4 pt-6">
                   <p className="text-lg text-foreground/90 font-medium leading-relaxed">
-                    A Picredi Administração Ativos é a entidade responsável pela gestão de fundos e recursos financeiros para o Sicredi, 
-                    uma das maiores instituições financeiras cooperativas do Brasil. Atuamos com base em princípios cooperativos, 
-                    focados em soluções financeiras que geram desenvolvimento local e beneficiam nossos associados e a sociedade.
+                    Atuamos com base em princípios cooperativos, focados em soluções financeiras que geram desenvolvimento local 
+                    e beneficiam nossos associados e a sociedade.
                   </p>
                 </div>
               </div>
