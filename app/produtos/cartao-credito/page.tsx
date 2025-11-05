@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import { 
   CreditCard, 
   TrendingUp, 
@@ -157,6 +158,8 @@ const steps = [
 ];
 
 export default function CartaoCreditoPage() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -201,17 +204,22 @@ export default function CartaoCreditoPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <Link href="/contato">
-                  <Button size="lg" variant="accent" className="group">
-                    Solicitar Cartão
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link href="/contato">
-                  <Button size="lg" variant="outline">
-                    Simular Limite
-                  </Button>
-                </Link>
+                <Button 
+                  size="lg" 
+                  variant="accent" 
+                  className="group"
+                  onClick={() => router.push('/contato')}
+                >
+                  Solicitar Cartão
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  onClick={() => router.push('/contato')}
+                >
+                  Simular Limite
+                </Button>
               </motion.div>
 
               {/* Trust Indicators */}
@@ -336,16 +344,20 @@ export default function CartaoCreditoPage() {
                     </ul>
                     
                     <div className="flex flex-col space-y-3">
-                      <Link href="/contato">
-                        <Button variant={cardType.popular ? "accent" : "outline"} className="w-full">
-                          Solicitar {cardType.name}
-                        </Button>
-                      </Link>
-                      <Link href="/contato">
-                        <Button variant="ghost" className="w-full">
-                          Comparar Cartões
-                        </Button>
-                      </Link>
+                      <Button 
+                        variant={cardType.popular ? "accent" : "outline"} 
+                        className="w-full"
+                        onClick={() => router.push('/contato')}
+                      >
+                        Solicitar {cardType.name}
+                      </Button>
+                      <Button 
+                        variant="ghost" 
+                        className="w-full"
+                        onClick={() => router.push('/contato')}
+                      >
+                        Comparar Cartões
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -596,17 +608,22 @@ export default function CartaoCreditoPage() {
               exclusivos sem pagar anuidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato">
-                <Button size="lg" variant="accent" className="group">
-                  Solicitar Cartão Agora
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link href="/contato">
-                <Button size="lg" variant="outline">
-                  Simular Limite
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                variant="accent" 
+                className="group"
+                onClick={() => router.push('/contato')}
+              >
+                Solicitar Cartão Agora
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => router.push('/contato')}
+              >
+                Simular Limite
+              </Button>
             </div>
           </motion.div>
         </div>
