@@ -399,12 +399,12 @@ export default function InvestimentosPage() {
                     
                     <div className="flex flex-col space-y-3">
                       <Link href="/contato">
-                        <Button variant={type.popular ? "accent" : "outline"} className="w-full">
+                        <Button variant="accent" className="w-full">
                           Investir em {type.title}
                         </Button>
                       </Link>
                       <Link href="/contato">
-                        <Button variant="ghost" className="w-full">
+                        <Button variant="outline" className="w-full">
                           Saiba Mais
                         </Button>
                       </Link>
@@ -445,17 +445,21 @@ export default function InvestimentosPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card variant="glass" className="h-full text-center hover:scale-105 transition-transform duration-300">
-                  <CardHeader>
+                <Card variant="glass" className="h-full flex flex-col text-center hover:scale-105 transition-transform duration-300">
+                  <CardHeader className="flex-1 flex flex-col">
                     <div className="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <benefit.icon className="w-8 h-8 text-accent" />
                     </div>
-                    <CardTitle className="text-xl mb-2">{benefit.title}</CardTitle>
-                    <CardDescription className="text-base mb-4">
+                    <CardTitle className="text-xl mb-3 min-h-[3rem] flex items-center justify-center">
+                      {benefit.title}
+                    </CardTitle>
+                    <CardDescription className="text-base mb-6 min-h-[4rem] flex items-start justify-center">
                       {benefit.description}
                     </CardDescription>
-                    <div className="px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-sm font-medium inline-block">
-                      {benefit.highlight}
+                    <div className="mt-auto pt-2">
+                      <div className="px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-sm font-medium inline-block">
+                        {benefit.highlight}
+                      </div>
                     </div>
                   </CardHeader>
                 </Card>
@@ -548,16 +552,18 @@ export default function InvestimentosPage() {
                   <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-accent to-secondary z-0" />
                 )}
                 
-                <Card variant="luxury" className="relative z-10 text-center">
-                  <CardHeader>
+                <Card variant="luxury" className="relative z-10 text-center h-full flex flex-col">
+                  <CardHeader className="flex-1 flex flex-col">
                     <div className="w-16 h-16 bg-gradient-to-r from-accent to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                       <span className="text-primary font-bold text-lg">{step.step}</span>
                     </div>
                     <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                       <step.icon className="w-6 h-6 text-accent" />
                     </div>
-                    <CardTitle className="text-xl mb-2">{step.title}</CardTitle>
-                    <CardDescription className="text-base">
+                    <CardTitle className="text-xl mb-3 min-h-[3rem] flex items-center justify-center">
+                      {step.title}
+                    </CardTitle>
+                    <CardDescription className="text-base min-h-[4rem] flex items-center justify-center">
                       {step.description}
                     </CardDescription>
                   </CardHeader>

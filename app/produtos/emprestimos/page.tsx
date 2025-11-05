@@ -465,12 +465,12 @@ export default function EmprestimosPage() {
                     
                     <div className="flex flex-col space-y-3">
                       <Link href="/contato">
-                        <Button variant={loan.popular ? "accent" : "outline"} className="w-full">
+                        <Button variant="accent" className="w-full">
                           Simular {loan.title}
                         </Button>
                       </Link>
                       <Link href="/contato">
-                        <Button variant="ghost" className="w-full">
+                        <Button variant="outline" className="w-full">
                           Saiba Mais
                         </Button>
                       </Link>
@@ -511,17 +511,21 @@ export default function EmprestimosPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card variant="glass" className="h-full text-center hover:scale-105 transition-transform duration-300">
-                  <CardHeader>
+                <Card variant="glass" className="h-full flex flex-col text-center hover:scale-105 transition-transform duration-300">
+                  <CardHeader className="flex-1 flex flex-col">
                     <div className="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <benefit.icon className="w-8 h-8 text-accent" />
                     </div>
-                    <CardTitle className="text-xl mb-2">{benefit.title}</CardTitle>
-                    <CardDescription className="text-base mb-4">
+                    <CardTitle className="text-xl mb-3 min-h-[3rem] flex items-center justify-center">
+                      {benefit.title}
+                    </CardTitle>
+                    <CardDescription className="text-base mb-6 min-h-[4rem] flex items-start justify-center">
                       {benefit.description}
                     </CardDescription>
-                    <div className="px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-sm font-medium inline-block">
-                      {benefit.highlight}
+                    <div className="mt-auto pt-2">
+                      <div className="px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-sm font-medium inline-block">
+                        {benefit.highlight}
+                      </div>
                     </div>
                   </CardHeader>
                 </Card>

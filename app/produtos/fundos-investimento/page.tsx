@@ -1,11 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import { LineChart, BarChart3, PieChart, Shuffle, Calculator, Wallet, Clock, Percent, Receipt, CheckCircle, Info, Users } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
 export default function FundosInvestimentoPage() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen">
       {/* Hero: imagem no topo e conteúdo abaixo (sem sticky/overlay) */}
@@ -308,12 +311,37 @@ export default function FundosInvestimentoPage() {
       </section>
 
       {/* CTA final da página */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-r from-accent/10 to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="accent">Ver Fundos</Button>
-            <Button size="lg" variant="outline">Falar com Assessor</Button>
-          </div>
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
+              Pronto para Investir?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Conheça nossos fundos de investimento ou fale com um assessor especializado para encontrar a melhor estratégia para você.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                variant="accent"
+                onClick={() => router.push('/contato')}
+              >
+                Ver Fundos
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => router.push('/contato')}
+              >
+                Falar com Assessor
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

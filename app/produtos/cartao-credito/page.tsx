@@ -23,7 +23,6 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { CreditCardComponent, CreditCardStack } from '@/components/ui/CreditCard';
-import Link from 'next/link';
 
 const cardTypes = [
   {

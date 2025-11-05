@@ -175,11 +175,13 @@ export default function ContaCorrentePage() {
                   Abrir Conta Agora
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Link href="/contato">
-                  <Button size="lg" variant="outline">
-                    Baixar App
-                  </Button>
-                </Link>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  onClick={() => router.push('/contato')}
+                >
+                  Baixar App
+                </Button>
               </div>
               {/* Trust Indicators */}
               <div className="flex items-center justify-center space-x-8">
@@ -436,7 +438,11 @@ export default function ContaCorrentePage() {
                 Abrir Conta Agora
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline">
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => router.push('/contato')}
+              >
                 Baixar App
               </Button>
             </div>
