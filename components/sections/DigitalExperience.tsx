@@ -94,7 +94,7 @@ export function DigitalExperience() {
               <Button 
                 variant="accent" 
                 size="lg"
-                onClick={() => router.push('/produtos/conta-corrente')}
+                onClick={() => router.push('/contato')}
               >
                 Abrir Conta Digital
               </Button>

@@ -196,7 +196,7 @@ export default function ProductsPage() {
                       <Button 
                         variant="accent" 
                         className="w-full"
-                        onClick={() => router.push(product.href)}
+                        onClick={() => router.push('/contato')}
                       >
                         Saiba Mais
                       </Button>

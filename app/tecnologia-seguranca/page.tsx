@@ -350,7 +350,7 @@ export default function TechnologySecurityPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/relatorio-seguranca"
+                href="/contato"
                 className="inline-flex items-center justify-center px-8 py-3 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors"
               >
                 Relatório de Segurança

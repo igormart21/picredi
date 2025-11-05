@@ -201,13 +201,17 @@ export default function CartaoCreditoPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <Button size="lg" variant="accent" className="group">
-                  Solicitar Cartão
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline">
-                  Simular Limite
-                </Button>
+                <Link href="/contato">
+                  <Button size="lg" variant="accent" className="group">
+                    Solicitar Cartão
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/contato">
+                  <Button size="lg" variant="outline">
+                    Simular Limite
+                  </Button>
+                </Link>
               </motion.div>
 
               {/* Trust Indicators */}
@@ -332,12 +336,16 @@ export default function CartaoCreditoPage() {
                     </ul>
                     
                     <div className="flex flex-col space-y-3">
-                      <Button variant={cardType.popular ? "accent" : "outline"} className="w-full">
-                        Solicitar {cardType.name}
-                      </Button>
-                      <Button variant="ghost" className="w-full">
-                        Comparar Cartões
-                      </Button>
+                      <Link href="/contato">
+                        <Button variant={cardType.popular ? "accent" : "outline"} className="w-full">
+                          Solicitar {cardType.name}
+                        </Button>
+                      </Link>
+                      <Link href="/contato">
+                        <Button variant="ghost" className="w-full">
+                          Comparar Cartões
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -588,13 +596,17 @@ export default function CartaoCreditoPage() {
               exclusivos sem pagar anuidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="accent" className="group">
-                Solicitar Cartão Agora
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Simular Limite
-              </Button>
+              <Link href="/contato">
+                <Button size="lg" variant="accent" className="group">
+                  Solicitar Cartão Agora
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/contato">
+                <Button size="lg" variant="outline">
+                  Simular Limite
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

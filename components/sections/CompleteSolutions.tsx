@@ -136,7 +136,7 @@ export function CompleteSolutions() {
             <Button 
               variant="accent" 
               size="lg"
-              onClick={() => router.push('/produtos')}
+              onClick={() => router.push('/contato')}
             >
               Ver Todas as Soluções
             </Button>

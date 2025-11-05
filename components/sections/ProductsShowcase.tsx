@@ -178,7 +178,7 @@ export function ProductsShowcase() {
                       <Button 
                         variant="accent" 
                         className="w-full"
-                        onClick={() => router.push(product.href)}
+                        onClick={() => router.push('/contato')}
                       >
                         Saiba Mais
                       </Button>
@@ -249,7 +249,7 @@ export function ProductsShowcase() {
                       <Button 
                         variant="secondary" 
                         className="w-full"
-                        onClick={() => router.push(product.href)}
+                        onClick={() => router.push('/contato')}
                       >
                         Saiba Mais
                       </Button>

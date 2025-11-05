@@ -222,13 +222,17 @@ export default function InvestimentosPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  <Button size="lg" variant="accent" className="group">
-                    Começar a Investir
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button size="lg" variant="outline">
-                    Simular Investimento
-                  </Button>
+                  <Link href="/contato" className="w-full sm:w-auto">
+                    <Button size="lg" variant="accent" className="group w-full sm:w-auto">
+                      Começar a Investir
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                  <Link href="/contato">
+                    <Button size="lg" variant="outline">
+                      Simular Investimento
+                    </Button>
+                  </Link>
                 </motion.div>
 
                 {/* Trust Indicators */}
@@ -394,12 +398,16 @@ export default function InvestimentosPage() {
                     </div>
                     
                     <div className="flex flex-col space-y-3">
-                      <Button variant={type.popular ? "accent" : "outline"} className="w-full">
-                        Investir em {type.title}
-                      </Button>
-                      <Button variant="ghost" className="w-full">
-                        Saiba Mais
-                      </Button>
+                      <Link href="/contato">
+                        <Button variant={type.popular ? "accent" : "outline"} className="w-full">
+                          Investir em {type.title}
+                        </Button>
+                      </Link>
+                      <Link href="/contato">
+                        <Button variant="ghost" className="w-full">
+                          Saiba Mais
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -670,13 +678,17 @@ export default function InvestimentosPage() {
               otimizadas sem pagar taxas de administração.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="accent" className="group">
-                Começar a Investir
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Simular Investimento
-              </Button>
+              <Link href="/contato">
+                <Button size="lg" variant="accent" className="group">
+                  Começar a Investir
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/contato">
+                <Button size="lg" variant="outline">
+                  Simular Investimento
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

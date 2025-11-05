@@ -259,13 +259,17 @@ export default function EmprestimosPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <Button size="lg" variant="accent" className="group">
-                  Simular Empréstimo
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline">
-                  Falar com Especialista
-                </Button>
+                <Link href="/contato">
+                  <Button size="lg" variant="accent" className="group">
+                    Simular Empréstimo
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/contato">
+                  <Button size="lg" variant="outline">
+                    Falar com Especialista
+                  </Button>
+                </Link>
               </motion.div>
 
               {/* Trust Indicators */}
@@ -365,9 +369,11 @@ export default function EmprestimosPage() {
                       </div>
                     </div>
                     
-                    <Button className="w-full">
-                      Solicitar Empréstimo
-                    </Button>
+                    <Link href="/contato">
+                      <Button className="w-full">
+                        Solicitar Empréstimo
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -458,12 +464,16 @@ export default function EmprestimosPage() {
                     </div>
                     
                     <div className="flex flex-col space-y-3">
-                      <Button variant={loan.popular ? "accent" : "outline"} className="w-full">
-                        Simular {loan.title}
-                      </Button>
-                      <Button variant="ghost" className="w-full">
-                        Saiba Mais
-                      </Button>
+                      <Link href="/contato">
+                        <Button variant={loan.popular ? "accent" : "outline"} className="w-full">
+                          Simular {loan.title}
+                        </Button>
+                      </Link>
+                      <Link href="/contato">
+                        <Button variant="ghost" className="w-full">
+                          Saiba Mais
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -695,13 +705,17 @@ export default function EmprestimosPage() {
               em até 1 dia útil com as melhores taxas do mercado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="accent" className="group">
-                Simular Empréstimo
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Falar com Especialista
-              </Button>
+              <Link href="/contato">
+                <Button size="lg" variant="accent" className="group">
+                  Simular Empréstimo
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/contato">
+                <Button size="lg" variant="outline">
+                  Falar com Especialista
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

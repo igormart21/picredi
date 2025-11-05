@@ -110,7 +110,7 @@ export default function Hero() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="/produtos" className="w-full sm:w-auto">
+              <Link href="/contato" className="w-full sm:w-auto">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto">
                   Ver Produtos
                 </Button>
