@@ -23,8 +23,8 @@ const navigation: NavItem[] = [
     children: [
       { label: 'Conta Corrente', href: '/produtos/conta-corrente' },
       { label: 'Cartão de Crédito', href: '/produtos/cartao-credito' },
-      { label: 'Investimentos', href: '/produtos/investimentos' },
       { label: 'Empréstimos', href: '/produtos/emprestimos' },
+      { label: 'Investimentos', href: '/produtos/investimentos' },
       { label: 'Agronegócio', href: '/produtos/agronegocio' },
       { label: 'Imobiliário', href: '/produtos/imobiliario' },
       { label: 'Fundos de Investimento', href: '/produtos/fundos-investimento' },

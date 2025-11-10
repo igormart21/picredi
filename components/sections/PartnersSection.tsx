@@ -3,13 +3,17 @@
 import React from 'react';
 
 const partners = [
-  '/assets/logo-picredi-white.png',
-  '/assets/LOGO 2.png',
-  '/assets/LOGO 4.png',
-  '/assets/logo-picredi-white.png',
-  '/assets/LOGO 2.png',
-  '/assets/LOGO 4.png',
+  '/assets/logo_branco_tagline.svg',
+  '/assets/logo-evostack-color-dark.svg',
+  '/assets/Boitel-Ribas-Agropecuaria.png',
 ];
+
+const rotatedPartners = [
+  partners[partners.length - 1],
+  ...partners.slice(0, partners.length - 1),
+];
+
+const marqueePartners = [...rotatedPartners, ...rotatedPartners, ...rotatedPartners];
 
 export function PartnersSection() {
   return (
@@ -23,24 +27,19 @@ export function PartnersSection() {
 
         <div className="relative overflow-hidden">
           <div className="flex items-center gap-12 animate-marquee will-change-transform">
-            {partners.map((src, idx) => (
-              <img
-                key={`row1-${idx}`}
-                src={src}
-                alt="Parceiro"
-                className="h-8 sm:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity object-contain"
-                loading="lazy"
-              />
-            ))}
-            {/* duplicado para loop contínuo */}
-            {partners.map((src, idx) => (
-              <img
-                key={`row1b-${idx}`}
-                src={src}
-                alt="Parceiro"
-                className="h-8 sm:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity object-contain"
-                loading="lazy"
-              />
+            {marqueePartners.map((src, idx) => (
+              <div
+                key={`partner-${idx}`}
+                className="h-12 sm:h-14 w-40 flex items-center justify-center flex-shrink-0"
+                aria-hidden={idx >= rotatedPartners.length}
+              >
+                <img
+                  src={src}
+                  alt="Parceiro"
+                  className="max-h-10 sm:max-h-12 w-auto opacity-80 hover:opacity-100 transition-opacity object-contain"
+                  loading="lazy"
+                />
+              </div>
             ))}
           </div>
         </div>

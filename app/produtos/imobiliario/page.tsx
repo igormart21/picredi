@@ -16,7 +16,7 @@ export default function ImobiliarioPage() {
         <div className="w-full h-[60vh] sm:h-[70vh] lg:h-[75vh]">
           <img
             src="/assets/imagnes/enhanced_real-estate-finance-mortgage-interest-260nw-2636368449-jpg copy.png"
-            alt="Picredi Crédito Imobiliário"
+            alt="Picredi Investimento Imobiliário"
             className="w-full h-full object-cover"
           />
         </div>
@@ -24,7 +24,7 @@ export default function ImobiliarioPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="text-center max-w-4xl mx-auto" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground mb-6">
-                Crédito <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Imobiliário</span>
+                Investimento <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Imobiliário</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
                 Financiamento, consórcio e portabilidade com condições competitivas e atendimento consultivo.
@@ -87,6 +87,114 @@ export default function ImobiliarioPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6 uppercase tracking-wide">
+              Investimento Imobiliário
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              O investimento imobiliário continua sendo uma das formas mais tradicionais e valorizadas de construir patrimônio
+              e gerar renda passiva.
+            </p>
+          </motion.div>
+
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Landmark,
+                title: 'Compra e venda de imóveis',
+                description:
+                  'Adquira imóveis estratégicos para revenda futura. Lucre com a valorização do patrimônio em mercados aquecidos.',
+              },
+              {
+                icon: Home,
+                title: 'Aluguel convencional',
+                description:
+                  'Garanta renda mensal estável com contratos residenciais ou comerciais de longo prazo e inadimplência controlada.',
+              },
+              {
+                icon: MapPin,
+                title: 'Aluguel por temporada',
+                description:
+                  'Potencialize ganhos em destinos turísticos ou centros urbanos com alta demanda por estadias de curto prazo.',
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card variant="glass" className="h-full">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                      <item.icon className="w-6 h-6 text-accent" />
+                    </div>
+                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      {item.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="mt-16 bg-muted/20 border border-border rounded-3xl p-8 sm:p-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-2xl sm:text-3xl font-good-times text-foreground mb-6 text-center">
+              Já sabe como escolher o melhor investimento imobiliário?
+            </h3>
+            <p className="text-base sm:text-lg text-muted-foreground text-center max-w-3xl mx-auto">
+              A decisão ideal exige uma visão estratégica alinhada ao seu perfil, objetivos e capital disponível. Analise os pilares abaixo e monte uma carteira equilibrada entre valorização e renda passiva.
+            </p>
+
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: 'Capital disponível',
+                  description: 'Defina o investimento inicial e a capacidade de aportes futuros para escolher o veículo adequado.',
+                },
+                {
+                  title: 'Objetivo financeiro',
+                  description:
+                    'Avalie se busca renda recorrente, valorização patrimonial ou diversificação do portfólio.',
+                },
+              ].map((item) => (
+                <Card key={item.title} variant="luxury" className="h-full">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{item.title}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      {item.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-8 bg-background border border-border/40 rounded-2xl p-6 sm:p-8">
+              <h4 className="text-lg font-semibold text-foreground mb-4">
+                Precisa de renda passiva imediata?
+              </h4>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Aluguel por temporada ou fundos imobiliários (FIIs) são excelentes alternativas. Eles combinam liquidez
+                com retornos frequentes e possibilidade de reinvestimento automático dos proventos.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA final da página */}
       <section className="py-20 bg-gradient-to-r from-accent/10 to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,10 +205,10 @@ export default function ImobiliarioPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
-              Pronto para Realizar seu Sonho?
+              Pronto para realizar sua operação?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Simule seu financiamento ou fale com nossos especialistas e encontre a melhor solução para o seu imóvel.
+              Simule sua operação ou fale com nossos especialistas e encontre a melhor solução para o seu imóvel.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -108,14 +216,14 @@ export default function ImobiliarioPage() {
                 variant="accent"
                 onClick={() => router.push('/contato')}
               >
-                Simular Financiamento
+                Falar com Especialista
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 onClick={() => router.push('/contato')}
               >
-                Falar com Especialista
+                Simular Operação
               </Button>
             </div>
           </motion.div>

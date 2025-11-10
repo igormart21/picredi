@@ -30,33 +30,33 @@ import Link from 'next/link';
 const investmentTypes = [
   {
     icon: BarChart3,
-    title: 'Renda Fixa',
-    description: 'Investimentos seguros com rendimento garantido',
-    minValue: 'R$ 10',
-    return: '12-15% a.a.',
-    risk: 'Baixo',
+    title: 'Fundos',
+    description: 'Carteiras multimercado com gestão ativa e diversificação global',
+    minValue: 'R$ 50K',
+    return: '18-22% a.a.',
+    risk: 'Médio',
     color: 'from-green-500 to-green-600',
-    features: ['CDB', 'LCI/LCA', 'Tesouro Direto', 'Debêntures'],
+    features: ['Gestão especializada', 'Multiestratégia', 'Proteção cambial', 'Relatórios mensais'],
   },
   {
     icon: TrendingUp,
-    title: 'Renda Variável',
-    description: 'Potencial de maior retorno com análise profissional',
-    minValue: 'R$ 100',
-    return: '15-25% a.a.',
-    risk: 'Médio',
+    title: 'Agronegócio',
+    description: 'Crédito estruturado para produção, safra e expansão no campo',
+    minValue: 'R$ 500K',
+    return: '1.5% ao mês',
+    risk: 'Baixo-Médio',
     color: 'from-blue-500 to-blue-600',
-    features: ['Fundos de Ações', 'ETFs', 'Stocks', 'REITs'],
+    features: ['Investimento direto para o produtor rural', 'Investimento indireto para mercado financeiro', 'Fundo de investimento agro', 'Linhas subsidiadas'],
   },
   {
     icon: Target,
-    title: 'Gestão Profissional',
-    description: 'Gestão especializada com análise de mercado',
-    minValue: 'R$ 10',
-    return: '14-18% a.a.',
-    risk: 'Baixo-Médio',
+    title: 'Imobiliário',
+    description: 'Investimentos diretos e indiretos no mercado imobiliário',
+    minValue: 'R$ 300K',
+    return: '1.3% ao mês',
+    risk: 'Moderado',
     color: 'from-purple-500 to-purple-600',
-    features: ['Análise Especializada', 'Rebalanceamento', 'Diversificação', 'Taxa Zero'],
+    features: ['Compra e venda', 'Locação', 'Desenvolvimento', 'Estruturação de CRIs'],
     popular: true,
   },
 ];
@@ -176,7 +176,7 @@ export default function InvestimentosPage() {
       <section>
         <div className="w-full h-[60vh] sm:h-[70vh] lg:h-[75vh]">
           <img
-            src="/assets/imagnes/enhanced_touro1-jpg.png"
+            src="/assets/enhanced_ae2262e5691373b5441014704471b140.png"
             alt="Picredi Investimentos"
             className="w-full h-full object-cover"
           />
@@ -198,9 +198,8 @@ export default function InvestimentosPage() {
                     </div>
                     <div>
                       <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground">
-                        Investimentos{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
-                          Profissionais
+                          Investimentos
                         </span>
                       </h1>
                       <p className="text-lg text-muted-foreground mt-2">
@@ -230,7 +229,7 @@ export default function InvestimentosPage() {
                   </Link>
                   <Link href="/contato">
                     <Button size="lg" variant="outline">
-                      Simular Investimento
+                      Simular operação
                     </Button>
                   </Link>
                 </motion.div>
@@ -382,28 +381,26 @@ export default function InvestimentosPage() {
                     </div>
                   </CardHeader>
                   
-                  <CardContent>
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">Produtos Disponíveis:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {type.features.map((feature, featureIndex) => (
-                          <span
-                            key={featureIndex}
-                            className="px-3 py-1 bg-muted/50 text-muted-foreground rounded-full text-sm"
-                          >
-                            {feature}
-                          </span>
+                  <CardContent className="flex-1 flex flex-col">
+                    <div className="mt-6">
+                      <div className="text-sm font-semibold text-foreground mb-3">Produtos Disponíveis:</div>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        {type.features.map((feature) => (
+                          <li key={feature} className="flex items-start space-x-2">
+                            <CheckCircle className="w-4 h-4 text-accent mt-0.5" />
+                            <span>{feature}</span>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </div>
-                    
-                    <div className="flex flex-col space-y-3">
-                      <Link href="/contato">
+ 
+                    <div className="mt-6 grid grid-cols-1 gap-3">
+                      <Link href="/contato" className="w-full">
                         <Button variant="accent" className="w-full">
                           Investir em {type.title}
                         </Button>
                       </Link>
-                      <Link href="/contato">
+                      <Link href="/contato" className="w-full">
                         <Button variant="outline" className="w-full">
                           Saiba Mais
                         </Button>
@@ -692,7 +689,7 @@ export default function InvestimentosPage() {
               </Link>
               <Link href="/contato">
                 <Button size="lg" variant="outline">
-                  Simular Investimento
+                  Simular operação
                 </Button>
               </Link>
             </div>

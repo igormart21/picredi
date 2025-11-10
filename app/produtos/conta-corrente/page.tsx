@@ -37,7 +37,7 @@ const features = [
     icon: TrendingUp,
     title: 'Investimentos Integrados',
     description: 'Acesse fundos e renda fixa direto do app',
-    highlight: 'A partir de R$ 10',
+    highlight: 'A partir de R$ 50K',
   },
   {
     icon: Shield,
@@ -50,8 +50,8 @@ const features = [
 const benefits = [
   {
     icon: CheckCircle,
-    title: 'Sem Taxa de Manutenção',
-    description: 'Mantenha sua conta sem pagar nada',
+    title: 'Com taxa de manutenção',
+    description: 'Mantenha sua conta protegida',
   },
   {
     icon: CheckCircle,
@@ -136,7 +136,7 @@ export default function ContaCorrentePage() {
   return (
     <div className="min-h-screen">
       {/* Hero: imagem no topo e conteúdo abaixo (sem sticky/overlay) */}
-      <section>
+      <section className="pt-20 sm:pt-24">
         <div className="w-full h-[45vh] sm:h-[55vh] lg:h-[60vh]">
           <img
             src="/assets/imagnes/image-115.png"
@@ -186,16 +186,16 @@ export default function ContaCorrentePage() {
               {/* Trust Indicators */}
               <div className="flex items-center justify-center space-x-8">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">500K+</div>
-                  <div className="text-sm text-muted-foreground">Clientes Ativos</div>
+                  <div className="text-2xl font-bold text-foreground">R$ 65 bi</div>
+                  <div className="text-sm text-muted-foreground">Em transações bancárias por mês</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">R$ 0</div>
-                  <div className="text-sm text-muted-foreground">Taxa de Manutenção</div>
+                  <div className="text-2xl font-bold text-foreground">2 mi</div>
+                  <div className="text-sm text-muted-foreground">Operações de crédito por mês</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">24/7</div>
-                  <div className="text-sm text-muted-foreground">Disponível</div>
+                  <div className="text-2xl font-bold text-foreground">R$ 1.5 bi</div>
+                  <div className="text-sm text-muted-foreground">Operações de crédito por mês</div>
                 </div>
               </div>
             </motion.div>
@@ -338,8 +338,8 @@ export default function ContaCorrentePage() {
                   <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-accent to-secondary z-0" />
                 )}
                 
-                <Card variant="luxury" className="relative z-10 text-center">
-                  <CardHeader>
+                <Card variant="luxury" className="relative z-10 text-center h-full flex flex-col">
+                  <CardHeader className="flex-1 flex flex-col items-center">
                     <div className="w-16 h-16 bg-gradient-to-r from-accent to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                       <span className="text-primary font-bold text-lg">{step.step}</span>
                     </div>

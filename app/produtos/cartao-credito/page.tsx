@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { CreditCardComponent, CreditCardStack } from '@/components/ui/CreditCard';
+import { CreditCardComponent } from '@/components/ui/CreditCard';
 
 const cardTypes = [
   {
@@ -31,8 +31,8 @@ const cardTypes = [
     description: 'Para quem busca exclusividade e benefícios premium',
     limit: 'Até R$ 50.000',
     annualFee: 'R$ 0',
-    cashback: '2%',
-    features: ['Cashback 2%', 'Seguro viagem', 'Lounge Priority Pass', 'Concierge 24h'],
+    cashback: '0.5%',
+    features: ['Cashback 0.5%', 'Seguro viagem', 'Lounge Priority Pass', 'Concierge 24h'],
     popular: true,
   },
   {
@@ -41,8 +41,8 @@ const cardTypes = [
     description: 'O equilíbrio perfeito entre benefícios e praticidade',
     limit: 'Até R$ 25.000',
     annualFee: 'R$ 0',
-    cashback: '1.5%',
-    features: ['Cashback 1.5%', 'Seguro viagem', 'Programa de pontos', 'Atendimento prioritário'],
+    cashback: '0.5%',
+    features: ['Cashback 0.5%', 'Seguro viagem', 'Programa de pontos', 'Atendimento prioritário'],
     popular: false,
   },
   {
@@ -51,8 +51,8 @@ const cardTypes = [
     description: 'Tecnologia e segurança para seu dia a dia',
     limit: 'Até R$ 15.000',
     annualFee: 'R$ 0',
-    cashback: '1%',
-    features: ['Cashback 1%', 'Seguro básico', 'App integrado', 'Notificações instantâneas'],
+    cashback: '0.5%',
+    features: ['Cashback 0.5%', 'Seguro básico', 'App integrado', 'Notificações instantâneas'],
     popular: false,
   },
 ];
@@ -62,7 +62,7 @@ const benefits = [
     icon: Gift,
     title: 'Cashback Automático',
     description: 'Receba dinheiro de volta em todas as suas compras',
-    highlight: 'Até 2%',
+    highlight: 'Até 0.5%',
   },
   {
     icon: Plane,
@@ -162,43 +162,49 @@ export default function CartaoCreditoPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-background via-background to-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
+      <section>
+        <div className="w-full h-[45vh] sm:h-[55vh] lg:h-[60vh]">
+          <img
+            src="/assets/enhanced_Untitled-1.png"
+            alt="Cartões Picredi"
+            className="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="py-16 sm:py-20 bg-gradient-to-br from-background via-background to-muted/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              className="space-y-8"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              className="text-center max-w-4xl mx-auto space-y-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center">
-                    <CreditCard className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground">
-                      Cartão de{' '}
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
-                        Crédito
-                      </span>
-                    </h1>
-                    <p className="text-lg text-muted-foreground mt-2">
-                      Sem anuidade para sempre
-                    </p>
-                  </div>
+              <div className="flex flex-col items-center space-y-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                  <CreditCard className="w-8 h-8 text-white" />
                 </div>
-                
-                <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                  Cartão premium com benefícios exclusivos, cashback automático 
-                  e sem taxa anual. Sua vida financeira mais inteligente.
-                </p>
+                <div>
+                  <h1 className="text-display text-4xl sm:text-5xl lg:text-6xl font-good-times text-foreground">
+                    Cartão de{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
+                      Crédito
+                    </span>
+                  </h1>
+                  <p className="text-lg text-muted-foreground mt-2">
+                    Sem anuidade para sempre
+                  </p>
+                </div>
               </div>
+
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Cartão premium com benefícios exclusivos, cashback automático 
+                e sem taxa anual. Sua vida financeira mais inteligente.
+              </p>
 
               {/* CTA Buttons */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-4 justify-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -223,7 +229,7 @@ export default function CartaoCreditoPage() {
 
               {/* Trust Indicators */}
               <motion.div
-                className="flex items-center space-x-8 pt-8"
+                className="flex flex-wrap items-center justify-center gap-6 pt-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -237,20 +243,10 @@ export default function CartaoCreditoPage() {
                   <div className="text-sm text-muted-foreground">Anuidade</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">2%</div>
+                  <div className="text-2xl font-bold text-foreground">0.5%</div>
                   <div className="text-sm text-muted-foreground">Cashback</div>
                 </div>
               </motion.div>
-            </motion.div>
-
-            {/* Credit Cards Display */}
-            <motion.div
-              className="relative flex justify-center"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <CreditCardStack />
             </motion.div>
           </div>
         </div>
@@ -394,16 +390,16 @@ export default function CartaoCreditoPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card variant="glass" className="h-full text-center hover:scale-105 transition-transform duration-300">
-                  <CardHeader>
+                <Card variant="glass" className="h-full text-center hover:scale-105 transition-transform duration-300 flex flex-col">
+                  <CardHeader className="flex-1 flex flex-col items-center text-center">
                     <div className="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <benefit.icon className="w-8 h-8 text-accent" />
                     </div>
                     <CardTitle className="text-xl mb-2">{benefit.title}</CardTitle>
-                    <CardDescription className="text-base mb-4">
+                    <CardDescription className="text-base mb-4 min-h-[60px]">
                       {benefit.description}
                     </CardDescription>
-                    <div className="px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-sm font-medium inline-block">
+                    <div className="mt-auto px-3 py-1 bg-gradient-to-r from-accent to-secondary text-primary rounded-full text-sm font-medium inline-block">
                       {benefit.highlight}
                     </div>
                   </CardHeader>

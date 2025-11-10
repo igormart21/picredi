@@ -26,7 +26,7 @@ const products = [
     title: 'Cartão de Crédito',
     description: 'Cartão premium com benefícios exclusivos e cashback.',
     features: [
-      'Cashback de até 2%',
+      'Cashback de até 0.5%',
       'Programa de pontos',
       'Seguro viagem',
       'Atendimento prioritário',

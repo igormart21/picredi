@@ -29,29 +29,29 @@ const values = [
 
 const timeline = [
   {
-    year: '2020',
+    year: '2021',
     title: 'Fundação',
     description: 'A Picredi foi fundada com a visão de revolucionar o banking digital no Brasil.',
   },
   {
-    year: '2021',
-    title: 'Primeiro Milhão',
-    description: 'Alcançamos nosso primeiro milhão de transações processadas com segurança.',
+    year: '2022',
+    title: 'Consolidação no mercado',
+    description: 'Consolidamos uma identidade própria frente ao mercado.',
   },
   {
-    year: '2022',
+    year: '2023',
     title: 'Expansão Nacional',
     description: 'Expandimos nossos serviços para todo o território nacional.',
   },
   {
-    year: '2023',
+    year: '2024',
     title: 'Tecnologia IA',
     description: 'Implementamos inteligência artificial em nossos processos de análise de crédito.',
   },
   {
-    year: '2024',
+    year: '2025',
     title: 'Futuro',
-    description: 'Continuamos inovando para trazer o futuro do banking para o presente.',
+    description: 'Continuamos inovando para trazer o futuro do mercado para o presente.',
   },
 ];
 
@@ -177,17 +177,17 @@ export default function AboutPage() {
               <div className="bg-card border border-border rounded-2xl p-8 shadow-luxury">
                 <div className="space-y-6">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-accent mb-2">500K+</div>
-                    <div className="text-muted-foreground">Clientes Ativos</div>
+                    <div className="text-4xl font-bold text-accent mb-2">R$ 65 bi</div>
+                    <div className="text-muted-foreground">Em transações bancárias por mês</div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-foreground">R$ 65 bi</div>
-                      <div className="text-sm text-muted-foreground">Volume Transacionado</div>
+                      <div className="text-2xl font-bold text-foreground">2 mi</div>
+                      <div className="text-sm text-muted-foreground">Operações de crédito por mês</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-foreground">99.9%</div>
-                      <div className="text-sm text-muted-foreground">Uptime</div>
+                      <div className="text-2xl font-bold text-foreground">R$ 1.5 bi</div>
+                      <div className="text-sm text-muted-foreground">Operações de crédito por mês</div>
                     </div>
                   </div>
                 </div>
@@ -413,7 +413,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-6 font-semibold leading-relaxed">
               Com a Picredi Administração Ativos, você tem acesso a uma gestão profissional e especializada,
-              com a solidez e a confiança de uma instituição financeira cooperativa com mais de um século de história.
+              com a solidez e a confiança de uma instituição financeira cooperativa com trajetória consolidada.
             </p>
             <p className="text-lg text-foreground/80 max-w-3xl mx-auto font-medium">
               Nossa atuação sistêmica e nosso foco no desenvolvimento local nos permitem oferecer soluções de investimento
@@ -435,7 +435,7 @@ export default function AboutPage() {
               <CardHeader className="bg-gradient-to-br from-secondary/10 to-transparent rounded-t-lg">
                 <CardTitle className="text-2xl font-bold mb-4 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">Solidez e Confiança</CardTitle>
                 <CardDescription className="text-base font-medium leading-relaxed">
-                  Instituição financeira cooperativa com mais de um século de história. Relatórios claros,
+                  Instituição financeira cooperativa com trajetória consolidada. Relatórios claros,
                   governança e comunicação acessível.
                 </CardDescription>
               </CardHeader>

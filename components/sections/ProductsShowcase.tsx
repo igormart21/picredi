@@ -22,7 +22,7 @@ const products = [
     icon: CreditCard,
     title: 'Cartão de Crédito',
     description: 'Cartão premium com benefícios exclusivos',
-    features: ['Cashback 2%', 'Programa de pontos', 'Seguro viagem'],
+    features: ['Cashback 0.5%', 'Programa de pontos', 'Seguro viagem'],
     price: 'Sem anuidade',
     popular: false,
     gradient: 'from-purple-500 to-purple-600',
@@ -32,8 +32,8 @@ const products = [
     icon: TrendingUp,
     title: 'Investimentos',
     description: 'Invista com inteligência artificial',
-    features: ['Robo-advisor gratuito', 'Fundos exclusivos', 'Renda fixa e variável'],
-    price: 'A partir de R$ 10',
+    features: ['Invista em multimercado', 'Fundos exclusivos', 'Renda fixa e variável'],
+    price: 'A partir de R$ 50K',
     popular: false,
     gradient: 'from-green-500 to-green-600',
     href: '/produtos/investimentos',
@@ -68,17 +68,21 @@ const businessProducts = [
   {
     icon: Sprout,
     title: 'Agronegócio',
-    description: 'Crédito e soluções financeiras para o campo',
-    features: ['Crédito Rural', 'Financiamento de máquinas', 'Safra e custeio'],
-    price: 'Linhas subsidiadas',
+    description: 'Soluções completas para o produtor rural',
+    features: [
+      'Investimento direto para o produtor rural',
+      'Investimento indireto para mercado financeiro',
+      'Fundo de investimento agro',
+    ],
+    price: 'Retorno de 1.5% ao mês',
     href: '/produtos/agronegocio',
   },
   {
     icon: Landmark,
     title: 'Imobiliário',
-    description: 'Financiamento e consórcio para imóveis',
-    features: ['Crédito habitacional', 'Consórcio', 'Portabilidade'],
-    price: 'Taxas a partir de 9.9% a.a.',
+    description: 'Investimentos diretos e indiretos no mercado imobiliário',
+    features: ['Compra e venda', 'Locação', 'Desenvolvimento'],
+    price: 'Retorno de 1.3% ao mês',
     href: '/produtos/imobiliario',
   },
   {
@@ -116,15 +120,6 @@ export function ProductsShowcase() {
 
         {/* Personal Products */}
         <div className="mb-12 sm:mb-16">
-          <motion.h3
-            className="text-xl sm:text-2xl font-semibold text-foreground mb-6 sm:mb-8 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Produtos Pessoais
-          </motion.h3>
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {products.map((product, index) => (
               <motion.div
@@ -199,15 +194,6 @@ export function ProductsShowcase() {
 
         {/* Business Products */}
         <div>
-          <motion.h3
-            className="text-xl sm:text-2xl font-semibold text-foreground mb-6 sm:mb-8 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Soluções Empresariais
-          </motion.h3>
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {businessProducts.map((product, index) => (
               <motion.div

@@ -38,7 +38,7 @@ const loanTypes = [
     description: 'Dinheiro rápido para suas necessidades',
     minValue: 'R$ 1.000',
     maxValue: 'R$ 50.000',
-    rate: '1.99% a.m.',
+    rate: '3.5% a.m.',
     term: 'Até 24 meses',
     color: 'from-blue-500 to-blue-600',
     features: ['Aprovação em 5 min', 'Sem comprovação de renda', 'Dinheiro na conta', 'Sem taxa de abertura'],
@@ -85,7 +85,7 @@ const benefits = [
     icon: DollarSign,
     title: 'Taxas Competitivas',
     description: 'As melhores taxas do mercado para você',
-    highlight: 'A partir de 1.99%',
+    highlight: 'A partir de 3.5%',
   },
   {
     icon: Clock,
@@ -200,7 +200,7 @@ function calculateInstallment(principal: number, monthlyRate: number, months: nu
 export default function EmprestimosPage() {
   const [loanAmount, setLoanAmount] = useState(10000);
   const [loanTerm, setLoanTerm] = useState(12);
-  const monthlyRate = 1.99; // Taxa mensal fixa de 1.99%
+  const monthlyRate = 3.5; // Taxa mensal fixa de 3.5%
 
   const installmentAmount = useMemo(() => {
     return calculateInstallment(loanAmount, monthlyRate, loanTerm);
@@ -284,7 +284,7 @@ export default function EmprestimosPage() {
                   <div className="text-sm text-muted-foreground">Aprovação</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">1.99%</div>
+                  <div className="text-2xl font-bold text-foreground">3.5%</div>
                   <div className="text-sm text-muted-foreground">Taxa Mensal</div>
                 </div>
                 <div className="text-center">

@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    description: 'contato@picredi.com.br',
+    description: 'cotroladoria@picredi.com.br',
     details: 'Resposta em até 2 horas úteis',
   },
   {

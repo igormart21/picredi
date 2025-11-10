@@ -2,17 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Shield, Zap, Users, Award, Globe } from 'lucide-react';
+import { TrendingUp, Shield, Zap, Award, Globe } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 
 const stats = [
-  {
-    icon: Users,
-    value: '632',
-    label: 'Parceiros',
-    description: '',
-    color: 'text-accent',
-  },
   {
     icon: TrendingUp,
     value: 'R$ 65 bi',
@@ -78,7 +71,7 @@ export function StatsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
