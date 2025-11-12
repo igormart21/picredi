@@ -223,7 +223,7 @@ export default function AgronegocioPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
-              Pronto para investir no agronegócio?
+              Pronto para realizar sua operação?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
               Fale com nossos especialistas e descubra as melhores soluções financeiras para o seu investimento.
