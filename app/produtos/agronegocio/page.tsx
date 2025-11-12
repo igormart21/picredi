@@ -226,7 +226,7 @@ export default function AgronegocioPage() {
               Pronto para realizar sua operação?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Fale com nossos especialistas e descubra as melhores soluções financeiras para o seu investimento.
+              Simule sua operação ou fale com nossos especialistas e descubra as melhores soluções financeiras para o seu investimento.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
