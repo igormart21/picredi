@@ -68,9 +68,9 @@ const businessProducts = [
   {
     icon: Sprout,
     title: 'Agronegócio',
-    description: 'Soluções completas para o produtor rural',
+    description: 'Soluções completas para o investidor rural',
     features: [
-      'Investimento direto para o produtor rural',
+      'Investimento direto',
       'Investimento indireto para mercado financeiro',
       'Fundo de investimento agro',
     ],

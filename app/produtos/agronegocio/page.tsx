@@ -41,66 +41,6 @@ export default function AgronegocioPage() {
 
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl sm:text-4xl font-good-times text-foreground mb-10 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            Linhas de Crédito
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: Sprout, title: 'Crédito Rural', desc: 'Capital de giro e custeio para safra.' },
-              { icon: Tractor, title: 'Máquinas e Equipamentos', desc: 'Financiamento de tratores e implementos.' },
-              { icon: Coins, title: 'Armazenagem e Infraestrutura', desc: 'Investimentos em silos e melhorias.' },
-            ].map((item, idx) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: idx * 0.1 }}>
-                <Card variant="glass" className="h-full">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
-                      <item.icon className="w-6 h-6 text-accent" />
-                    </div>
-                    <CardTitle className="text-xl">{item.title}</CardTitle>
-                    <CardDescription className="text-base">{item.desc}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-10 text-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            Benefícios
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: ShieldCheck, title: 'Condições Competitivas', desc: 'Linhas subsidiadas e prazos flexíveis.' },
-              { icon: Sprout, title: 'Atendimento Especializado', desc: 'Time com experiência no agronegócio.' },
-              { icon: Coins, title: 'Fluxo de Caixa', desc: 'Soluções que acompanham o ciclo produtivo.' },
-            ].map((b, idx) => (
-              <motion.div key={b.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: idx * 0.1 }}>
-                <Card variant="luxury" className="h-full">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
-                      <b.icon className="w-6 h-6 text-secondary" />
-                    </div>
-                    <CardTitle className="text-xl">{b.title}</CardTitle>
-                    <CardDescription className="text-base">{b.desc}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
@@ -122,8 +62,8 @@ export default function AgronegocioPage() {
             transition={{ duration: 0.6 }}
           >
             {[
-              { label: '18%', desc: 'Redução média no custo por arroba deliverida com gestão financeira integrada.' },
-              { label: '120 dias', desc: 'Prazo estimado para payback em projetos de nutrição e manejo intensivo.' },
+              { label: '14%', desc: 'Redução média no custo por arroba deliverida com gestão financeira integrada.' },
+              { label: '100 dias', desc: 'Prazo estimado para payback em projetos de nutrição e manejo intensivo.' },
               { label: '+25%', desc: 'Incremento na taxa de lotação com monitoramento de pasto e genética orientada a dados.' },
             ].map((item) => (
               <div key={item.label} className="rounded-3xl border border-border/60 bg-muted/10 p-6 text-center">
@@ -210,31 +150,64 @@ export default function AgronegocioPage() {
             </div>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-2xl bg-background border border-border/60 p-6">
-                <h4 className="text-lg font-semibold text-foreground mb-3">Benefícios adicionais</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="leading-relaxed">
-                    <span className="text-accent font-semibold">• </span>
-                    Assessoria jurídica para contratos de parceria, arrendamento e integração.
-                  </li>
-                  <li className="leading-relaxed">
-                    <span className="text-accent font-semibold">• </span>
-                    Marketplace de insumos com negociação centralizada e logística otimizada.
-                  </li>
-                  <li className="leading-relaxed">
-                    <span className="text-accent font-semibold">• </span>
-                    Inteligência climática e de mercado com projeções semanais de preços e demanda.
-                  </li>
-                </ul>
-              </div>
-              <div className="rounded-2xl bg-secondary/10 border border-secondary/30 p-6">
-                <h4 className="text-lg font-semibold text-foreground mb-3">Como começar hoje</h4>
-                <ol className="space-y-2 text-sm text-muted-foreground list-decimal list-inside">
-                  <li>Realize um diagnóstico financeiro e produtivo completo com nossa equipe.</li>
-                  <li>Defina metas de ganho de peso, taxa de prenhez e giro de capital por ciclo produtivo.</li>
-                  <li>Estruture o plano Picredi com crédito direcionado, consultoria técnica e monitoramento contínuo.</li>
-                </ol>
-              </div>
+              <Card variant="luxury" className="h-full">
+                <CardHeader>
+                  <CardTitle className="text-xl">Benefícios adicionais</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="leading-relaxed">
+                      <span className="text-accent font-semibold">• </span>
+                      Assessoria jurídica para contratos de parceria, arrendamento e integração.
+                    </li>
+                    <li className="leading-relaxed">
+                      <span className="text-accent font-semibold">• </span>
+                      Marketplace de insumos com negociação centralizada e logística otimizada.
+                    </li>
+                    <li className="leading-relaxed">
+                      <span className="text-accent font-semibold">• </span>
+                      Inteligência climática e de mercado com projeções semanais de preços e demanda.
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card variant="luxury" className="h-full">
+                <CardHeader>
+                  <CardTitle className="text-xl">Como começar hoje</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ol className="space-y-2 text-sm text-muted-foreground list-decimal list-inside">
+                    <li>Realize um diagnóstico financeiro e produtivo completo com nossa equipe.</li>
+                    <li>Defina metas de ganho de peso, taxa de prenhez e giro de capital por ciclo produtivo.</li>
+                    <li>Estruture o plano Picredi com crédito direcionado, consultoria técnica e monitoramento contínuo.</li>
+                  </ol>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { icon: ShieldCheck, title: 'Condições Competitivas', desc: 'Linhas subsidiadas e prazos flexíveis.' },
+                { icon: Sprout, title: 'Atendimento Especializado', desc: 'Time com experiência no agronegócio.' },
+                { icon: Coins, title: 'Fluxo de Caixa', desc: 'Soluções que acompanham o ciclo produtivo.' },
+              ].map((benefit, idx) => (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <Card variant="luxury" className="h-full">
+                    <CardHeader>
+                      <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                        <benefit.icon className="w-6 h-6 text-secondary" />
+                      </div>
+                      <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                      <CardDescription className="text-base">{benefit.desc}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -250,10 +223,10 @@ export default function AgronegocioPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl sm:text-4xl font-good-times text-foreground mb-6">
-              Pronto para Investir no Campo?
+              Pronto para investir no agronegócio?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Fale com nossos especialistas e descubra as melhores soluções financeiras para o seu agronegócio.
+              Fale com nossos especialistas e descubra as melhores soluções financeiras para o seu investimento.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

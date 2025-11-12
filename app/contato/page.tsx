@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    description: 'cotroladoria@picredi.com.br',
+    description: 'controladoria@picredi.com.br',
     details: 'Resposta em até 2 horas úteis',
   },
   {
@@ -99,11 +99,11 @@ export default function ContactPage() {
                     </div>
                     <CardTitle className="text-lg">{info.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-xl font-semibold text-foreground mb-2">
+                  <CardContent className="space-y-2">
+                    <p className="text-xl font-semibold text-foreground break-words">
                       {info.description}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground break-words">
                       {info.details}
                     </p>
                   </CardContent>

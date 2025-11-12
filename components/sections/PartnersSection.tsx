@@ -6,6 +6,7 @@ const partners = [
   '/assets/logo_branco_tagline.svg',
   '/assets/logo-evostack-color-dark.svg',
   '/assets/Boitel-Ribas-Agropecuaria.png',
+  '/assets/logotipo-degustus-white.png',
 ];
 
 const rotatedPartners = [
@@ -30,7 +31,7 @@ export function PartnersSection() {
             {marqueePartners.map((src, idx) => (
               <div
                 key={`partner-${idx}`}
-                className="h-12 sm:h-14 w-40 flex items-center justify-center flex-shrink-0"
+                className="h-12 sm:h-14 w-48 flex items-center justify-center flex-shrink-0"
                 aria-hidden={idx >= rotatedPartners.length}
               >
                 <img

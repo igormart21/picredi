@@ -136,18 +136,18 @@ export default function ContaCorrentePage() {
   return (
     <div className="min-h-screen">
       {/* Hero: imagem no topo e conteúdo abaixo (sem sticky/overlay) */}
-      <section className="pt-20 sm:pt-24">
-        <div className="w-full h-[45vh] sm:h-[55vh] lg:h-[60vh]">
+      <section className="-mt-2 pt-0 sm:mt-0 sm:pt-24">
+        <div className="w-full h-[52vh] sm:h-[52vh] lg:h-[60vh]">
           <img
             src="/assets/imagnes/image-115.png"
             alt="Picredi App Preview"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain object-left -translate-x-3 sm:-translate-x-2 md:-translate-x-6 lg:-translate-x-10"
           />
         </div>
-        <div className="py-16 sm:py-20">
+        <div className="pt-0 pb-8 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              className="text-center max-w-4xl mx-auto"
+              className="text-center max-w-4xl mx-auto -mt-2 sm:mt-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}

@@ -41,12 +41,13 @@ const investmentTypes = [
   {
     icon: TrendingUp,
     title: 'Agronegócio',
-    description: 'Crédito estruturado para produção, safra e expansão no campo',
+    description: 'Operações estruturadas para rentabilização e liquidação',
     minValue: 'R$ 500K',
     return: '1.5% ao mês',
     risk: 'Baixo-Médio',
     color: 'from-blue-500 to-blue-600',
     features: ['Investimento direto para o produtor rural', 'Investimento indireto para mercado financeiro', 'Fundo de investimento agro', 'Linhas subsidiadas'],
+    popular: true,
   },
   {
     icon: Target,
@@ -57,7 +58,6 @@ const investmentTypes = [
     risk: 'Moderado',
     color: 'from-purple-500 to-purple-600',
     features: ['Compra e venda', 'Locação', 'Desenvolvimento', 'Estruturação de CRIs'],
-    popular: true,
   },
 ];
 

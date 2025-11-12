@@ -74,7 +74,7 @@ export default function Footer() {
           >
             <Link href="/" className="flex items-center space-x-2 mb-6">
               <img 
-                src="/assets/logo-picredi-white.png" 
+                src="/assets/LOGO%2004%20quadrado.png" 
                 alt="Picredi Logo" 
                 className="h-8 w-auto"
               />
@@ -208,7 +208,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-accent" />
               <div>
-                <p className="text-sm font-medium text-foreground">cotroladoria@picredi.com.br</p>
+                <p className="text-sm font-medium text-foreground">controladoria@picredi.com.br</p>
                 <p className="text-xs text-muted-foreground">Suporte por email</p>
               </div>
             </div>

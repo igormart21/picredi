@@ -151,7 +151,7 @@ const steps = [
   {
     step: '04',
     title: 'Cartão Ativo',
-    description: 'Use o cartão imediatamente',
+    description: 'Comece a usar o cartão imediatamente',
     icon: CreditCard,
   },
 ];
@@ -165,7 +165,7 @@ export default function CartaoCreditoPage() {
       <section>
         <div className="w-full h-[45vh] sm:h-[55vh] lg:h-[60vh]">
           <img
-            src="/assets/enhanced_Untitled-1.png"
+            src="/assets/Untitled-1.png"
             alt="Cartões Picredi"
             className="w-full h-full object-cover object-center"
             loading="lazy"
@@ -292,7 +292,7 @@ export default function CartaoCreditoPage() {
                 
                 <Card 
                   variant={cardType.popular ? 'luxury' : 'default'} 
-                  className="h-full hover:scale-105 transition-transform duration-300"
+                  className="h-full flex flex-col hover:scale-105 transition-transform duration-300"
                 >
                   <CardHeader className="text-center">
                     {/* Card Preview */}
@@ -328,8 +328,8 @@ export default function CartaoCreditoPage() {
                     </div>
                   </CardHeader>
                   
-                  <CardContent>
-                    <ul className="space-y-3 mb-6">
+                  <CardContent className="flex-1 flex flex-col">
+                    <ul className="space-y-3 mb-6 flex-1">
                       {cardType.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center space-x-3">
                           <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
@@ -338,9 +338,9 @@ export default function CartaoCreditoPage() {
                       ))}
                     </ul>
                     
-                    <div className="flex flex-col space-y-3">
+                    <div className="flex flex-col space-y-3 mt-auto">
                       <Button 
-                        variant={cardType.popular ? "accent" : "outline"} 
+                        variant="accent"
                         className="w-full"
                         onClick={() => router.push('/contato')}
                       >
@@ -493,8 +493,8 @@ export default function CartaoCreditoPage() {
                   <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-accent to-secondary z-0" />
                 )}
                 
-                <Card variant="luxury" className="relative z-10 text-center">
-                  <CardHeader>
+                <Card variant="luxury" className="relative z-10 text-center h-full flex flex-col">
+                  <CardHeader className="flex-1 flex flex-col">
                     <div className="w-16 h-16 bg-gradient-to-r from-accent to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                       <span className="text-primary font-bold text-lg">{step.step}</span>
                     </div>
@@ -506,6 +506,7 @@ export default function CartaoCreditoPage() {
                       {step.description}
                     </CardDescription>
                   </CardHeader>
+                  <div className="h-4" />
                 </Card>
               </motion.div>
             ))}

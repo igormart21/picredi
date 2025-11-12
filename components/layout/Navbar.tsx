@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/Button';
 
 interface NavItem {
   label: string;
@@ -76,9 +75,9 @@ export default function Navbar() {
               className="flex items-center space-x-3"
             >
               <img 
-                src="/assets/logo-picredi.png" 
+                src="/assets/LOGO%2002%20quadrado.png" 
                 alt="Picredi Logo" 
-                className="h-5 w-auto"
+                className="h-44 w-auto"
               />
             </motion.div>
           </Link>
@@ -135,17 +134,22 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center space-x-2">
-            <Link href="/login">
-              <Button variant="ghost" size="sm" className="rounded-full border border-border/50 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 px-6 py-2 whitespace-nowrap">
+          <div className="hidden lg:flex items-center">
+            <div className="flex items-center rounded-full bg-accent text-accent-foreground shadow-glow px-6 py-2 space-x-3">
+              <Link
+                href="/login"
+                className="text-sm font-medium whitespace-nowrap hover:opacity-80 transition-opacity"
+              >
                 Acessar Conta
-              </Button>
-            </Link>
-            <Link href="/contato">
-              <Button variant="accent" size="sm" className="rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 px-6 py-2 whitespace-nowrap">
+              </Link>
+              <span className="text-sm font-semibold">/</span>
+              <Link
+                href="/contato"
+                className="text-sm font-medium whitespace-nowrap hover:opacity-80 transition-opacity"
+              >
                 Abrir Conta
-              </Button>
-            </Link>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -201,17 +205,24 @@ export default function Navbar() {
                 </div>
               ))}
               
-              <div className="pt-6 border-t border-border space-y-4">
-                <Link href="/login" onClick={closeMobileMenu}>
-                  <Button variant="ghost" className="w-full justify-center rounded-full border border-border/50 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 px-8 py-4 text-base whitespace-nowrap">
+              <div className="pt-6 border-t border-border">
+                <div className="rounded-full bg-accent text-accent-foreground shadow-glow px-6 py-4 flex items-center justify-center space-x-4">
+                  <Link
+                    href="/login"
+                    onClick={closeMobileMenu}
+                    className="text-base font-medium whitespace-nowrap hover:opacity-80 transition-opacity"
+                  >
                     Acessar Conta
-                  </Button>
-                </Link>
-                <Link href="/contato" onClick={closeMobileMenu}>
-                  <Button variant="accent" className="w-full rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 px-8 py-4 text-base whitespace-nowrap">
+                  </Link>
+                  <span className="text-lg font-semibold">/</span>
+                  <Link
+                    href="/contato"
+                    onClick={closeMobileMenu}
+                    className="text-base font-medium whitespace-nowrap hover:opacity-80 transition-opacity"
+                  >
                     Abrir Conta
-                  </Button>
-                </Link>
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>

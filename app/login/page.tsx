@@ -33,7 +33,7 @@ export default function LoginPage() {
         >
           <div className="flex justify-center mb-6">
             <img 
-              src="/assets/logo-picredi-white.png" 
+              src="/assets/LOGO%2004%20quadrado.png" 
               alt="Picredi Logo" 
               className="h-12 w-auto"
             />
