@@ -5,9 +5,33 @@ import { Phone, MessageCircle, ShieldAlert, Headset, Users, Globe } from 'lucide
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import Link from 'next/link';
 
-const supportChannels = [
+const iconMap = {
+  whatsapp: MessageCircle,
+  phone: Phone,
+  manager: Users,
+  digital: Globe,
+  ouvidoria: Headset,
+  alert: ShieldAlert,
+} as const;
+
+type IconKey = keyof typeof iconMap;
+
+interface SupportItem {
+  label: string;
+  value: string;
+  href?: string;
+}
+
+interface SupportChannel {
+  icon: IconKey;
+  title: string;
+  description: string;
+  items: SupportItem[];
+}
+
+const supportChannels: SupportChannel[] = [
   {
-    icon: MessageCircle,
+    icon: 'whatsapp',
     title: 'Atendimento via WhatsApp (Assistente Virtual "Theo")',
     description:
       'O canal mais rápido para obter informações, verificar saldo, extrato e tirar dúvidas gerais.',
@@ -21,7 +45,7 @@ const supportChannels = [
     ],
   },
   {
-    icon: Phone,
+    icon: 'phone',
     title: 'Telefones da Central de Atendimento',
     description:
       'Para quem prefere conversar por telefone, mantenha os números oficiais do Picredi sempre à mão.',
@@ -36,7 +60,7 @@ const supportChannels = [
     ],
   },
   {
-    icon: Users,
+    icon: 'manager',
     title: 'Fale com seu Gerente',
     description:
       'Seu gerente acompanha seus objetivos e está pronto para apoiar decisões sobre investimentos e fundos.',
@@ -49,7 +73,7 @@ const supportChannels = [
     ],
   },
   {
-    icon: Globe,
+    icon: 'digital',
     title: 'Canais Digitais',
     description:
       'O site oficial e o aplicativo do Picredi reúnem Perguntas Frequentes (FAQ), status dos fundos e acesso rápido a serviços.',
@@ -67,7 +91,7 @@ const supportChannels = [
     ],
   },
   {
-    icon: Headset,
+    icon: 'ouvidoria',
     title: 'Ouvidoria',
     description:
       'Se a sua demanda não foi solucionada pelos canais anteriores, conte com a Ouvidoria Picredi.',
@@ -82,6 +106,8 @@ const supportChannels = [
 ];
 
 export default function AjudaPage() {
+  const AlertIcon = iconMap.alert;
+
   return (
     <div className="min-h-screen pt-20 sm:pt-24 bg-gradient-to-br from-background via-background to-muted/20">
       <section className="py-16 sm:py-20">
@@ -117,7 +143,8 @@ export default function AjudaPage() {
             viewport={{ once: true }}
           >
             {supportChannels.map((channel, index) => {
-              const Icon = channel.icon;
+              const Icon = iconMap[channel.icon];
+              if (!Icon) return null;
               return (
               <motion.div
                 key={channel.title}
@@ -157,7 +184,8 @@ export default function AjudaPage() {
                   </CardContent>
                 </Card>
               </motion.div>
-            )})}
+            );
+            })}
           </motion.div>
         </div>
       </section>
@@ -172,7 +200,7 @@ export default function AjudaPage() {
             viewport={{ once: true }}
           >
             <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
-              <ShieldAlert className="w-8 h-8 text-accent" />
+              <AlertIcon className="w-8 h-8 text-accent" />
             </div>
             <div>
               <h2 className="text-2xl font-good-times text-foreground mb-4">
