@@ -1,5 +1,6 @@
 'use client';
 
+import type { SVGProps } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import {
@@ -15,11 +16,21 @@ import {
   Settings2,
   Smile,
   Smartphone,
-  MessageCircle,
   MapPin,
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+
+const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M12.002 2.004c-5.524 0-10 4.393-10 9.804 0 1.94.578 3.76 1.677 5.352L2 22l5.058-1.487c1.616.883 3.438 1.35 5.287 1.35 5.524 0 10-4.393 10-9.804s-4.476-9.805-10-9.805Zm0 17.842c-1.652 0-3.267-.44-4.694-1.272l-.336-.195-3.001.874.872-2.894-.218-.335c-1.04-1.597-1.589-3.44-1.589-5.216 0-4.673 3.988-8.475 8.956-8.475s8.956 3.802 8.956 8.475-3.988 8.472-8.956 8.472Zm4.88-6.308c-.264-.132-1.556-.767-1.797-.854-.24-.088-.416-.132-.593.132-.176.264-.682.854-.834 1.03-.152.175-.305.197-.568.066-.264-.132-1.114-.408-2.123-1.3-.785-.668-1.314-1.492-1.466-1.756-.152-.264-.016-.406.115-.537.12-.119.264-.309.396-.463.132-.154.176-.264.264-.44.088-.175.044-.33-.022-.463-.064-.132-.593-1.417-.813-1.94-.214-.514-.432-.445-.593-.452l-.507-.009c-.176 0-.462.066-.705.33-.24.264-.924.902-.924 2.2 0 1.298.947 2.555 1.079 2.731.132.175 1.862 2.98 4.515 4.167.631.272 1.122.435 1.505.556.632.201 1.206.172 1.66.104.507-.076 1.556-.637 1.777-1.253.218-.615.218-1.143.152-1.253-.064-.109-.24-.175-.504-.307Z" />
+  </svg>
+);
 
 const personalInsurances = [
   {
@@ -172,13 +183,17 @@ const contractingChannels = [
     description:
       'Contrate pelo menu de seguros no app e acompanhe coberturas, pagamentos e assistências.',
     cta: 'Abrir o app Picredi',
+    href: 'https://picredi.com/app',
+    external: true,
   },
   {
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     title: 'WhatsApp Oficial',
     description:
       'Fale com um atendente pelo canal oficial e personalize sua proposta em poucos minutos.',
     cta: 'Conversar com o Picredi',
+    href: 'https://wa.me/5511914247595',
+    external: true,
   },
   {
     icon: MapPin,
@@ -186,6 +201,8 @@ const contractingChannels = [
     description:
       'Visite uma de nossas agências e converse com um gerente para escolher a melhor solução.',
     cta: 'Encontrar uma agência',
+    href: '/contato',
+    external: false,
   },
 ];
 
@@ -494,9 +511,15 @@ export default function SegurosPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <Button variant="outline" className="w-full">
-                      {channel.cta}
-                    </Button>
+                    <Link
+                      href={channel.href}
+                      target={channel.external ? '_blank' : undefined}
+                      rel={channel.external ? 'noopener noreferrer' : undefined}
+                    >
+                      <Button variant="outline" className="w-full">
+                        {channel.cta}
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </motion.div>
