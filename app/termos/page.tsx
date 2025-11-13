@@ -173,7 +173,7 @@ export default function TermosPage() {
             viewport={{ once: true }}
           >
             {termsSections.map((section, index) => {
-              const IconComponent = section.icon;
+              const IconComponent = section.icon ?? FileCheck;
 
               return (
                 <motion.div
@@ -223,7 +223,7 @@ export default function TermosPage() {
             viewport={{ once: true }}
           >
             {additionalSections.map((section, index) => {
-              const IconComponent = section.icon;
+              const IconComponent = section.icon ?? BookOpenCheck;
 
               return (
                 <motion.div
@@ -284,7 +284,7 @@ export default function TermosPage() {
             viewport={{ once: true }}
           >
             {helpChannels.map((channel, index) => {
-              const IconComponent = channel.icon;
+              const IconComponent = channel.icon ?? MessageCircle;
 
               return (
                 <motion.div
@@ -329,7 +329,7 @@ export default function TermosPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Para acessar os termos completos e atualizados, visite&nbsp;
+            Para acessar os termos completos e atualizados, visite{' '}
             <Link href="/termos" className="text-accent hover:underline">
               picredi.com.br/termos
             </Link>
