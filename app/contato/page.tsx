@@ -1,15 +1,32 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
-const contactInfo = [
+type ContactInfoCard = {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  description: React.ReactNode;
+  details: string;
+};
+
+const contactInfo: ContactInfoCard[] = [
   {
     icon: Phone,
     title: 'Telefone',
-    description: '0800 123 4567',
+    description: (
+      <a
+        href="https://wa.me/5511914247595"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-accent transition-colors"
+      >
+        +55 11 91424-7595
+      </a>
+    ),
     details: 'Atendimento 24h, 7 dias por semana',
   },
   {
@@ -100,9 +117,9 @@ export default function ContactPage() {
                     <CardTitle className="text-lg">{info.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-2">
-                    <p className="text-xl font-semibold text-foreground break-words">
+                    <div className="text-xl font-semibold text-foreground break-words">
                       {info.description}
-                    </p>
+                    </div>
                     <p className="text-sm text-muted-foreground break-words">
                       {info.details}
                     </p>

@@ -36,7 +36,7 @@ const supportChannels: SupportChannel[] = [
     description:
       'O canal mais rápido para obter informações, verificar saldo, extrato e tirar dúvidas gerais.',
     items: [
-      { label: 'Número Oficial', value: '(11) 91424-7595' },
+      { label: 'Número Oficial', value: '+55 11 91424-7595', href: 'https://wa.me/5511914247595' },
       {
         label: 'Como usar',
         value:
@@ -50,8 +50,8 @@ const supportChannels: SupportChannel[] = [
     description:
       'Para quem prefere conversar por telefone, mantenha os números oficiais do Picredi sempre à mão.',
     items: [
-      { label: 'Capitais e Regiões Metropolitanas', value: '(11) 91424-7595' },
-      { label: 'Demais Localidades', value: '(11) 91424-7595' },
+      { label: 'Capitais e Regiões Metropolitanas', value: '+55 11 91424-7595', href: 'tel:+5511914247595' },
+      { label: 'Demais Localidades', value: '+55 11 91424-7595', href: 'tel:+5511914247595' },
       {
         label: 'Outros números mencionados no FAQ',
         value:
@@ -96,7 +96,7 @@ const supportChannels: SupportChannel[] = [
     description:
       'Se a sua demanda não foi solucionada pelos canais anteriores, conte com a Ouvidoria Picredi.',
     items: [
-      { label: 'Telefone', value: '(11) 91424-7595' },
+      { label: 'Telefone', value: '+55 11 91424-7595', href: 'tel:+5511914247595' },
       {
         label: 'Portal da Ouvidoria',
         value: 'Disponível no site oficial do Picredi para registro formal de solicitações.',

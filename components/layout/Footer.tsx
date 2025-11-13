@@ -201,8 +201,15 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               <Phone className="w-5 h-5 text-accent" />
               <div>
-                <p className="text-sm font-medium text-foreground">0800 123 4567</p>
-                <p className="text-xs text-muted-foreground">Atendimento 24h</p>
+                <Link
+                  href="https://wa.me/5511914247595"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-foreground hover:text-accent transition-colors"
+                >
+                  +55 11 91424-7595
+                </Link>
+                <p className="text-xs text-muted-foreground">WhatsApp e Atendimento 24h</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
