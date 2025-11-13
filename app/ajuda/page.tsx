@@ -143,8 +143,8 @@ export default function AjudaPage() {
             viewport={{ once: true }}
           >
             {supportChannels.map((channel, index) => {
-              const Icon = iconMap[channel.icon];
-              if (!Icon) return null;
+              const IconComponent = iconMap[channel.icon] ?? iconMap.whatsapp;
+
               return (
               <motion.div
                 key={channel.title}
@@ -156,7 +156,7 @@ export default function AjudaPage() {
                 <Card variant="luxury" className="h-full flex flex-col">
                   <CardHeader>
                     <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-accent" />
+                      <IconComponent className="w-6 h-6 text-accent" />
                     </div>
                     <CardTitle className="text-xl">{channel.title}</CardTitle>
                     <CardDescription className="text-base leading-relaxed">
