@@ -32,7 +32,7 @@ interface SupportChannel {
 const supportChannels: SupportChannel[] = [
   {
     icon: 'whatsapp',
-    title: 'Atendimento via WhatsApp (Assistente Virtual "Theo")',
+    title: '1. Atendimento via WhatsApp (Assistente Virtual "Theo")',
     description:
       'O canal mais rápido para obter informações, verificar saldo, extrato e tirar dúvidas gerais.',
     items: [
@@ -46,7 +46,7 @@ const supportChannels: SupportChannel[] = [
   },
   {
     icon: 'phone',
-    title: 'Telefones da Central de Atendimento',
+    title: '2. Telefones da Central de Atendimento',
     description:
       'Para quem prefere conversar por telefone, mantenha os números oficiais do Picredi sempre à mão.',
     items: [
@@ -61,7 +61,7 @@ const supportChannels: SupportChannel[] = [
   },
   {
     icon: 'manager',
-    title: 'Fale com seu Gerente',
+    title: '3. Fale com seu Gerente',
     description:
       'Seu gerente acompanha seus objetivos e está pronto para apoiar decisões sobre investimentos e fundos.',
     items: [
@@ -74,7 +74,7 @@ const supportChannels: SupportChannel[] = [
   },
   {
     icon: 'digital',
-    title: 'Canais Digitais',
+    title: '4. Canais Digitais',
     description:
       'O site oficial e o aplicativo do Picredi reúnem Perguntas Frequentes (FAQ), status dos fundos e acesso rápido a serviços.',
     items: [
@@ -92,7 +92,7 @@ const supportChannels: SupportChannel[] = [
   },
   {
     icon: 'ouvidoria',
-    title: 'Ouvidoria',
+    title: '5. Ouvidoria',
     description:
       'Se a sua demanda não foi solucionada pelos canais anteriores, conte com a Ouvidoria Picredi.',
     items: [
