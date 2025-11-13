@@ -2,17 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  Leaf,
-  Building2,
-  Sun,
-  HandCoins,
-  HeartHandshake,
-  BookOpenCheck,
-  Sprout,
-  FileText,
-  Smartphone,
-} from 'lucide-react';
+import { Leaf, Building2, Sun, Coins, HeartHandshake, BookOpenCheck, Sprout, FileText, Smartphone } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import Link from 'next/link';
 
