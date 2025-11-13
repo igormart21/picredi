@@ -1,10 +1,22 @@
 'use client';
 
 import React from 'react';
+import type { SVGProps } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, MapPin, Clock, Send } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+
+const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.763.462 3.482 1.337 4.998L2 22l5.173-1.326a9.944 9.944 0 0 0 4.83 1.247h.001c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.181-2.929-7.07a9.944 9.944 0 0 0-7.068-2.851Zm0 1.8a8.2 8.2 0 0 1 5.822 2.413A8.203 8.203 0 0 1 20.003 12c0 4.525-3.676 8.2-8.201 8.2a8.21 8.21 0 0 1-4.184-1.124l-.299-.18-3.076.788.82-2.99-.194-.307A8.192 8.192 0 0 1 3.8 12c0-4.525 3.675-8.2 8.2-8.2Zm-2.198 4.902c-.189-.42-.388-.429-.568-.437-.147-.006-.315-.006-.483-.006-.168 0-.44.063-.671.314-.231.252-.883.863-.883 2.104 0 1.24.904 2.438 1.03 2.604.126.168 1.743 2.79 4.273 3.8 2.519 1.004 2.519.669 2.973.626.454-.042 1.463-.598 1.669-1.177.206-.58.206-1.075.147-1.177-.058-.1-.231-.168-.482-.295-.252-.126-1.493-.736-1.725-.819-.231-.084-.4-.126-.568.126-.168.252-.651.819-.799.987-.148.168-.294.189-.546.063-.252-.126-1.064-.392-2.026-1.247-.748-.668-1.252-1.492-1.4-1.744-.147-.252-.016-.389.111-.514.114-.114.252-.294.378-.441.126-.147.168-.252.253-.42.084-.168.042-.314-.021-.441-.063-.126-.55-1.32-.778-1.806Z" />
+  </svg>
+);
 
 type ContactInfoCard = {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -15,7 +27,7 @@ type ContactInfoCard = {
 
 const contactInfo: ContactInfoCard[] = [
   {
-    icon: Phone,
+    icon: WhatsAppIcon,
     title: 'Telefone',
     description: (
       <a
@@ -32,7 +44,14 @@ const contactInfo: ContactInfoCard[] = [
   {
     icon: Mail,
     title: 'Email',
-    description: 'controladoria@picredi.com.br',
+    description: (
+      <a
+        href="mailto:controladoria@picredi.com.br"
+        className="hover:text-accent transition-colors"
+      >
+        controladoria@picredi.com.br
+      </a>
+    ),
     details: 'Resposta em até 2 horas úteis',
   },
   {
@@ -108,24 +127,24 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card variant="glass" className="text-center h-full">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                      <info.icon className="w-6 h-6 text-accent" />
-                    </div>
-                    <CardTitle className="text-lg">{info.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="text-xl font-semibold text-foreground break-words">
-                      {info.description}
-                    </div>
-                    <p className="text-sm text-muted-foreground break-words">
-                      {info.details}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                >
+                  <Card variant="glass" className="text-center h-full min-w-[240px] flex flex-col items-center px-6 py-6">
+                    <CardHeader className="flex flex-col items-center">
+                      <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
+                        <info.icon className="w-6 h-6 text-accent" />
+                      </div>
+                      <CardTitle className="text-lg text-center">{info.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2 w-full">
+                      <div className="text-xl font-semibold text-foreground break-words">
+                        {info.description}
+                      </div>
+                      <p className="text-sm text-muted-foreground break-words">
+                        {info.details}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
             ))}
           </div>
 

@@ -3,18 +3,29 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import type { SVGProps } from 'react';
 import { 
   Facebook, 
   Twitter, 
   Linkedin, 
   Instagram, 
   Mail, 
-  Phone, 
   MapPin,
   Shield,
   Award,
   Users
 } from 'lucide-react';
+
+const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.763.462 3.482 1.337 4.998L2 22l5.173-1.326a9.944 9.944 0 0 0 4.83 1.247h.001c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.181-2.929-7.07a9.944 9.944 0 0 0-7.068-2.851Zm0 1.8a8.2 8.2 0 0 1 5.822 2.413A8.203 8.203 0 0 1 20.003 12c0 4.525-3.676 8.2-8.201 8.2a8.21 8.21 0 0 1-4.184-1.124l-.299-.18-3.076.788.82-2.99-.194-.307A8.192 8.192 0 0 1 3.8 12c0-4.525 3.675-8.2 8.2-8.2Zm-2.198 4.902c-.189-.42-.388-.429-.568-.437-.147-.006-.315-.006-.483-.006-.168 0-.44.063-.671.314-.231.252-.883.863-.883 2.104 0 1.24.904 2.438 1.03 2.604.126.168 1.743 2.79 4.273 3.8 2.519 1.004 2.519.669 2.973.626.454-.042 1.463-.598 1.669-1.177.206-.58.206-1.075.147-1.177-.058-.1-.231-.168-.482-.295-.252-.126-1.493-.736-1.725-.819-.231-.084-.4-.126-.568.126-.168.252-.651.819-.799.987-.148.168-.294.189-.546.063-.252-.126-1.064-.392-2.026-1.247-.748-.668-1.252-1.492-1.4-1.744-.147-.252-.016-.389.111-.514.114-.114.252-.294.378-.441.126-.147.168-.252.253-.42.084-.168.042-.314-.021-.441-.063-.126-.55-1.32-.778-1.806Z" />
+  </svg>
+);
 
 const footerLinks = {
   products: [
@@ -199,7 +210,7 @@ export default function Footer() {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center space-x-3">
-              <Phone className="w-5 h-5 text-accent" />
+              <WhatsAppIcon className="w-5 h-5 text-accent" />
               <div>
                 <Link
                   href="https://wa.me/5511914247595"
