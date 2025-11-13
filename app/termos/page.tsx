@@ -216,7 +216,7 @@ export default function TermosPage() {
       <section className="pb-16 sm:pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 place-items-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -233,7 +233,7 @@ export default function TermosPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card variant="glass" className="h-full flex flex-col">
+                  <Card variant="glass" className="h-full flex flex-col w-full max-w-2xl">
                     <CardHeader>
                       <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
                         <IconComponent className="w-6 h-6 text-secondary" />
