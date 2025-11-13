@@ -120,7 +120,7 @@ export default function CodigoCondutaPage() {
                         {principle.description}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="mt-auto space-y-3">
+                    <CardContent className="space-y-3">
                       <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
                         {principle.bullets.map((bullet) => (
                           <li key={bullet} className="flex items-start gap-2">
