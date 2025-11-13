@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, ShieldAlert, Headset, Users, Globe } from 'lucide-react';
+import { Phone, MessageCircle, ShieldAlert, Headphones, Users, Globe } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import Link from 'next/link';
 
@@ -10,7 +10,7 @@ const iconMap = {
   phone: Phone,
   manager: Users,
   digital: Globe,
-  ouvidoria: Headset,
+  ouvidoria: Headphones,
   alert: ShieldAlert,
 } as const;
 

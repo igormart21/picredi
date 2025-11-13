@@ -7,7 +7,7 @@ import {
   MonitorSmartphone,
   Copyright,
   LineChart,
-  TriangleAlert,
+  AlertTriangle,
   Shield,
   RefreshCcw,
   BookOpenCheck,
@@ -61,7 +61,7 @@ const termsSections: TermSection[] = [
     ],
   },
   {
-    icon: TriangleAlert,
+    icon: AlertTriangle,
     title: '5. Limitação de Responsabilidade',
     description:
       'O Picredi não se responsabiliza por danos decorrentes do uso indevido das plataformas, decisões de investimento baseadas exclusivamente nas informações disponíveis ou indisponibilidade temporária de sistemas e conexões.',
