@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, ShieldAlert, Headset, Users, Smartphone, Globe } from 'lucide-react';
+import { Phone, MessageCircle, ShieldAlert, Headset, Users, Globe } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import Link from 'next/link';
 
@@ -56,16 +56,8 @@ const supportChannels = [
     items: [
       {
         label: 'Site',
-        value: (
-          <Link
-            href="https://picredi.com.br/site/atendimento/canais/fale-conosco/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent hover:underline"
-          >
-            picredi.com.br/site/atendimento/canais/fale-conosco/
-          </Link>
-        ),
+        value: 'picredi.com.br/site/atendimento/canais/fale-conosco/',
+        href: 'https://picredi.com.br/site/atendimento/canais/fale-conosco/',
       },
       {
         label: 'Aplicativo',
@@ -124,7 +116,9 @@ export default function AjudaPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {supportChannels.map((channel, index) => (
+            {supportChannels.map((channel, index) => {
+              const Icon = channel.icon;
+              return (
               <motion.div
                 key={channel.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -135,7 +129,7 @@ export default function AjudaPage() {
                 <Card variant="luxury" className="h-full flex flex-col">
                   <CardHeader>
                     <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4">
-                      <channel.icon className="w-6 h-6 text-accent" />
+                      <Icon className="w-6 h-6 text-accent" />
                     </div>
                     <CardTitle className="text-xl">{channel.title}</CardTitle>
                     <CardDescription className="text-base leading-relaxed">
@@ -146,15 +140,24 @@ export default function AjudaPage() {
                     {channel.items.map((item) => (
                       <div key={item.label}>
                         <p className="text-sm font-semibold text-foreground">{item.label}</p>
-                        <p className="text-sm text-muted-foreground">
-                          {typeof item.value === 'string' ? item.value : item.value}
-                        </p>
+                        {item.href ? (
+                          <Link
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-accent hover:underline"
+                          >
+                            {item.value}
+                          </Link>
+                        ) : (
+                          <p className="text-sm text-muted-foreground">{item.value}</p>
+                        )}
                       </div>
                     ))}
                   </CardContent>
                 </Card>
               </motion.div>
-            ))}
+            )})}
           </motion.div>
         </div>
       </section>
