@@ -77,7 +77,7 @@ export default function ImobiliarioPage() {
               {[
                 {
                   title: 'Capital disponível',
-                  description: 'Defina o investimento inicial e a capacidade de aportes futuros para escolher o veículo adequado.',
+                  description: 'Defina o investimento inicial e a capacidade de aportes futuros para escolher o ativo adequado.',
                 },
                 {
                   title: 'Objetivo financeiro',

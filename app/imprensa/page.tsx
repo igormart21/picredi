@@ -70,7 +70,7 @@ const pressContacts = [
     title: 'Portal Oficial',
     description:
       'Acesse a seção “Imprensa” no site institucional para consultar releases, contatos e materiais atualizados.',
-    href: 'https://picredi.com.br/imprensa',
+    href: '/ajuda',
   },
   {
     icon: LinkIcon,
@@ -179,18 +179,18 @@ export default function ImprensaPage() {
                 return (
                   <div
                     key={contact.title}
-                    className="flex flex-col items-center text-center bg-background/60 border border-border rounded-2xl p-6"
+                    className="flex h-full flex-col items-center text-center bg-background/60 border border-border rounded-2xl p-6"
                   >
                     <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
                       <IconComponent className="w-6 h-6 text-secondary" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">{contact.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                       {contact.description}
                     </p>
                     <Link
                       href={contact.href}
-                      className="inline-flex items-center text-sm font-medium text-secondary hover:underline"
+                      className="mt-auto inline-flex items-center text-sm font-medium text-secondary hover:underline"
                     >
                       Acessar canal
                     </Link>

@@ -103,8 +103,8 @@ const policyItems: PolicyItem[] = [
     description:
       'Para dúvidas ou solicitações sobre privacidade e proteção de dados, fale conosco.',
     bullets: [
-      'E-mail: atendimento@picredi.com.br',
-      'Endereço: Av. Pres. Juscelino Kubitschek, 1455 - 4º Andar - Vila Nova Conceição, São Paulo - SP, 04543-011.',
+      'E-mail: controladoria@picredi.com.br',
+      'Endereço: Av. Pres. Juscelino Kubitschek, 1455 - 4º Andar - Vila Nova Conceição, São Paulo - SP, 04543-011',
     ],
   },
 ];
@@ -128,7 +128,7 @@ export default function PoliticaPrivacidadePage() {
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground mb-6">
               PICREDI ADMINISTRACAO ATIVOS LTDA • CNPJ 19.969.164/0001-50 • Av. Pres. Juscelino
-              Kubitschek, 1455 - 4º Andar - Vila Nova Conceição, São Paulo - SP, 04543-011.
+              Kubitschek, 1455 - 4º Andar - Vila Nova Conceição, São Paulo - SP, 04543-011
             </p>
             <p className="text-base sm:text-lg text-muted-foreground">
               Esta Política descreve como coletamos, usamos e protegemos seus dados pessoais,

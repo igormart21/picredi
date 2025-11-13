@@ -70,7 +70,7 @@ const applyChannels = [
     title: 'Site de Carreiras do Picredi',
     description:
       'Portal oficial com vagas em aberto, depoimentos e a cultura da cooperativa. Cadastre seu currículo e acompanhe as oportunidades.',
-    href: 'https://picredi.com.br/carreiras',
+    href: '/ajuda',
     email: 'controladoria@picredi.com.br',
   },
   {
@@ -78,7 +78,7 @@ const applyChannels = [
     title: 'Plataforma Gupy',
     description:
       'Sistema principal utilizado pelo Picredi para gestão de vagas, cadastro de currículos, testes e entrevistas online.',
-    href: 'https://picredi.gupy.io',
+    href: '/ajuda',
     email: 'controladoria@picredi.com.br',
   },
 ];

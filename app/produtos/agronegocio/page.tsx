@@ -32,7 +32,7 @@ export default function AgronegocioPage() {
                 As melhores soluções para seu investimento no <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">agronegócio</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Crédito e serviços financeiros sob medida para impulsionar a produção, a safra e o crescimento do campo.
+                Operações estruturadas por nossa equipe de especialistas em investimentos, para direcionar seu capital aos melhores ativos do agronegócio.
               </p>
             </motion.div>
           </div>
@@ -51,7 +51,7 @@ export default function AgronegocioPage() {
               Investimentos no agronegócio
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Com a Picredi Agronegócio, sua pecuária alcança outro nível: resultados rápidos, custos reduzidos e uma engorda que gera lucro de verdade. Com processos otimizados, tecnologia de ponta e o bem-estar animal como prioridade, garantimos que cada arroba entregue o retorno que você precisa. Fale agora com nossos especialistas e veja como podemos ajudar seu rebanho a produzir mais!
+              Com a Picredi Agronegócio, seu capital alcança outro nível: resultados rápidos, custos reduzidos e uma engorda que gera lucro de verdade. Com processos otimizados, tecnologia de ponta e o bem-estar animal como prioridade, garantimos que cada arroba entregue o retorno que você precisa. Fale agora com nossos especialistas e veja como podemos ajudar seu rebanho a produzir mais!
             </p>
           </motion.div>
 

@@ -55,7 +55,7 @@ const transparencyLinks = [
     title: 'Relatório de Sustentabilidade',
     description:
       'Publicado anualmente, detalha iniciativas e resultados ESG, reforçando a transparência com associados e comunidades.',
-    href: 'https://picredi.com.br/relatorios',
+    href: '/ajuda',
   },
   {
     icon: Smartphone,
@@ -163,18 +163,18 @@ export default function SustentabilidadePage() {
                 return (
                   <div
                     key={link.title}
-                    className="bg-background/70 border border-border rounded-2xl p-6 flex flex-col items-center hover:border-accent/40 transition-colors text-center"
+                    className="bg-background/70 border border-border rounded-2xl p-6 flex h-full flex-col items-center hover:border-accent/40 transition-colors text-center"
                   >
                     <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
                       <IconComponent className="w-6 h-6 text-secondary" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">{link.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                       {link.description}
                     </p>
                     <Link
                       href={link.href}
-                      className="inline-flex items-center text-sm font-medium text-secondary hover:underline"
+                      className="mt-auto inline-flex items-center text-sm font-medium text-secondary hover:underline"
                     >
                       Acessar
                     </Link>

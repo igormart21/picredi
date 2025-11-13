@@ -324,8 +324,7 @@ export default function InvestimentosPage() {
               </span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Diversas opções para diferentes perfis de investidor. 
-              Nossa IA escolhe a melhor estratégia para você.
+              Nossa equipe de especialistas analisa e sugere a melhor estratégia para você.
             </p>
           </motion.div>
 
