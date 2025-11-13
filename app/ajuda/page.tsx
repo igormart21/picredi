@@ -80,8 +80,8 @@ const supportChannels: SupportChannel[] = [
     items: [
       {
         label: 'Site',
-        value: 'picredi.com.br/site/atendimento/canais/fale-conosco/',
-        href: 'https://picredi.com.br/site/atendimento/canais/fale-conosco/',
+        value: 'picredi.com.br/ajuda',
+        href: '/ajuda',
       },
       {
         label: 'Aplicativo',
